@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kadrix — Kit Investisseur Locatif</title>
 <meta name="description" content="Analysez la rentabilité réelle d'un investissement locatif : simulateur gratuit, guide de l'investisseur et Kit Excel complet (BRRRR, LMNP vs SCI à l'IS, DPE, HCSF).">
+<link rel="icon" type="image/png" href="favicon-kadrix.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -242,6 +243,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#accueil" data-nav>Accueil</a></li>
       <li><a href="#simulateur" data-nav>Simulateur</a></li>
+      <li><a href="#analyse" data-nav>Analyse</a></li>
       <li><a href="#apprendre" data-nav>Apprendre</a></li>
       <li><a href="#kit" data-nav>Le Kit</a></li>
       <li><a href="#contact" data-nav>Contact</a></li>
@@ -284,7 +286,10 @@
   <section class="strip">
     <h2>90 % des « bonnes affaires » ne survivent pas au calcul complet.</h2>
     <p>Un rendement brut flatteur cache souvent une fiscalité mal choisie, un DPE qui interdira la location en 2028, ou un ratio d'endettement qui bloquera votre prochain achat. Kadrix fait le calcul complet — avant de signer, pas après.</p>
-    <a href="#simulateur" class="btn btn-gold" data-nav>Commencer par le simulateur</a>
+    <div class="btn-row" style="margin-top:0">
+      <a href="#simulateur" class="btn btn-gold" data-nav>Commencer par le simulateur</a>
+      <a href="#analyse" class="btn btn-ghost" data-nav>Ou déléguer l'analyse (48 h)</a>
+    </div>
   </section>
 </main>
 
@@ -370,7 +375,7 @@
           <button class="btn btn-gold" id="unlock" style="padding:12px 18px;font-size:.74rem">Débloquer</button>
         </div>
         <div class="err" id="err">Merci d'entrer un email valide.</div>
-        <div class="privacy">Pas de spam. Uniquement des analyses concrètes d'investissement locatif.</div>
+        <div class="privacy">Pas de spam. Uniquement des analyses concrètes d'investissement locatif. <a href="#confidentialite" data-nav style="color:inherit">Confidentialité</a></div>
       </div>
       <div class="detail" id="detail">
         <div class="row"><span>Coût total de l'opération</span><b id="d-total">—</b></div>
@@ -524,6 +529,85 @@
   </div>
 </main>
 
+<!-- ==================== ANALYSE SUR MESURE ==================== -->
+<main class="page" id="page-analyse">
+  <section class="section">
+    <span class="mono">Service sur mesure</span>
+    <h1>Vous avez trouvé un bien. Faut-il foncer&nbsp;?</h1>
+    <p class="lede">Envoyez-moi l'annonce et quelques chiffres : vous recevez sous 48 h un rapport PDF clair — verdict, chiffres expliqués en français, angle de négociation et les 5 questions à poser avant de signer. Sans Excel, sans jargon.</p>
+  </section>
+
+  <div class="learn-block">
+    <span class="mono">Comment ça marche</span>
+    <h2>Trois étapes, 48 heures</h2>
+    <div class="kit-list">
+      <div class="kit-item"><span class="num">01</span><div><h3>Vous remplissez le formulaire (5 min)</h3><p>Le lien de l'annonce et quelques ordres de grandeur sur votre financement. Rien de plus — voir l'encadré données ci-dessous.</p></div></div>
+      <div class="kit-item"><span class="num">02</span><div><h3>J'analyse le bien avec la méthode Kadrix</h3><p>Le bien passe dans le moteur complet du Kit : coûts réels, fiscalité adaptée à votre situation, DPE, HCSF, scénarios de négociation.</p></div></div>
+      <div class="kit-item"><span class="num">03</span><div><h3>Vous recevez votre rapport PDF</h3><p>Verdict couleur, chiffres traduits en décisions, prix cible de négociation chiffré et les 5 questions à poser à l'agent ou au vendeur.</p></div></div>
+    </div>
+  </div>
+
+  <div class="learn-block" style="border-color:var(--gold)">
+    <span class="mono">Vos données — notre engagement</span>
+    <h2>Le minimum, jamais plus</h2>
+    <p><strong style="color:var(--cream)">Nous ne demandons ni nom de famille, ni bulletins de salaire, ni relevés bancaires.</strong> Un prénom, un email, et des ordres de grandeur suffisent à produire l'analyse. Vos informations servent uniquement à votre rapport, ne sont jamais partagées, et sont supprimées au plus tard 12 mois après la livraison — ou immédiatement sur simple demande. <a href="#confidentialite" data-nav>Politique de confidentialité complète</a>.</p>
+  </div>
+
+  <div class="price-box">
+    <span class="mono" style="display:block;margin-bottom:14px">Tarif de lancement</span>
+    <div class="old">49 €</div>
+    <div class="new">29 €</div>
+    <div class="sub">Rapport PDF sous 48 h ouvrées · Une question de suivi incluse · −15 € sur le Kit complet</div>
+    <a href="#" class="btn btn-gold" id="analyse-link">Demander mon analyse</a>
+  </div>
+
+  <div class="learn-block faq">
+    <span class="mono">Questions fréquentes</span>
+    <h2>Avant de demander</h2>
+    <div style="margin-top:8px">
+      <details class="term"><summary>Quelle différence avec le simulateur gratuit ?</summary><div>Le simulateur donne une première photo en 4 indicateurs. L'analyse ajoute ce qui décide vraiment : la fiscalité adaptée à votre situation, le risque DPE, la vacance, les scénarios de négociation chiffrés — et surtout une lecture en français de ce que tout ça implique pour vous.</div></details>
+      <details class="term"><summary>Est-ce un conseil en investissement ?</summary><div>Non. C'est une analyse pédagogique et chiffrée des informations transmises : elle vous donne les éléments pour décider, mais la décision vous appartient. Le rapport ne remplace pas les vérifications d'usage (diagnostics, PV d'AG) ni les professionnels réglementés.</div></details>
+      <details class="term"><summary>Et si l'annonce disparaît entre-temps ?</summary><div>Envoyez des captures d'écran de l'annonce avec le formulaire : l'analyse se fait sur cette base, même si le bien est retiré.</div></details>
+      <details class="term"><summary>Je veux analyser plusieurs biens</summary><div>C'est exactement le cas d'usage du Kit Investisseur (45 €) : la même méthode, en autonomie, sur autant de biens que vous voulez. Les clients de l'Analyse bénéficient de 15 € de réduction dessus.</div></details>
+    </div>
+  </div>
+</main>
+
+<!-- ==================== CONFIDENTIALITÉ ==================== -->
+<main class="page" id="page-confidentialite">
+  <section class="section">
+    <span class="mono">Vos données</span>
+    <h1>Politique de confidentialité</h1>
+    <p class="lede">Version courte : nous collectons le strict minimum, nous ne partageons rien, et nous supprimons vos données à échéance ou sur simple demande. Version complète ci-dessous.</p>
+  </section>
+
+  <div class="learn-block">
+    <h2>Responsable de traitement</h2>
+    <p>[Prénom Nom], entrepreneur individuel — [adresse professionnelle] — SIREN [XXX XXX XXX]. Contact : <a href="mailto:contact.kadrix@gmail.com">contact.kadrix@gmail.com</a>.</p>
+
+    <h2 style="margin-top:24px">Données collectées et finalités</h2>
+    <p><strong style="color:var(--cream)">Analyse sur mesure</strong> : les informations sur le bien et votre projet de financement (prix, apport, revenus mensuels approximatifs, total des mensualités en cours) servent exclusivement à produire votre rapport. Base légale : exécution du contrat.</p>
+    <p><strong style="color:var(--cream)">Simulateur gratuit</strong> : l'email saisi pour débloquer les résultats détaillés sert à vous les adresser et, si vous y consentez séparément, à recevoir nos contenus. Base légale : consentement.</p>
+    <p><strong style="color:var(--cream)">Facturation</strong> : nom et adresse, exigés par la réglementation comptable. Base légale : obligation légale.</p>
+
+    <h2 style="margin-top:24px">Ce que nous ne faisons jamais</h2>
+    <p>Vendre, louer ou partager vos données. Demander des justificatifs bancaires ou fiscaux. Prendre des décisions automatisées vous concernant.</p>
+
+    <h2 style="margin-top:24px">Durées de conservation</h2>
+    <p>Données d'analyse et échanges : 12 mois après livraison du rapport. Factures : 10 ans (obligation légale). Emails avec consentement : jusqu'à désinscription ou 3 ans d'inactivité.</p>
+
+    <h2 style="margin-top:24px">Sous-traitants</h2>
+    <p>Google Ireland Ltd (messagerie), Tally BV (formulaires), Payhip Ltd (paiement et livraison), GitHub Inc. (hébergement du site — aucune donnée de formulaire n'y transite). Certains prestataires peuvent traiter des données hors de l'Union européenne dans le cadre des clauses contractuelles types de la Commission européenne.</p>
+
+    <h2 style="margin-top:24px">Vos droits</h2>
+    <p>Accès, rectification, effacement, limitation, portabilité et opposition : sur simple email à <a href="mailto:contact.kadrix@gmail.com">contact.kadrix@gmail.com</a>, réponse sous 30 jours. Vous pouvez également saisir la CNIL (cnil.fr).</p>
+
+    <h2 style="margin-top:24px">Cookies</h2>
+    <p>Ce site n'utilise aucun cookie publicitaire ni traceur.</p>
+    <p style="margin-top:16px;font-size:.8rem;color:var(--faint)">Dernière mise à jour : [date].</p>
+  </div>
+</main>
+
 <!-- ==================== CONTACT ==================== -->
 <main class="page" id="page-contact">
   <section class="section">
@@ -555,9 +639,11 @@
   <div class="foot-logo">Kadrix.</div>
   <nav class="foot">
     <a href="#simulateur" data-nav>Simulateur</a>
+    <a href="#analyse" data-nav>Analyse</a>
     <a href="#apprendre" data-nav>Apprendre</a>
     <a href="#kit" data-nav>Le Kit</a>
     <a href="#contact" data-nav>Contact</a>
+    <a href="#confidentialite" data-nav>Confidentialité</a>
   </nav>
   Les contenus de ce site sont fournis à titre pédagogique et ne constituent pas un conseil en investissement, un conseil fiscal ou juridique. Simulations indicatives — fiscalité non incluse dans le rendement net du simulateur. Frais de notaire estimés forfaitairement à 8 % (ancien).
 </footer>
@@ -568,12 +654,14 @@
 (function(){
   // ⚙️ À personnaliser :
   var PAYHIP_URL = "https://payhip.com/VOTRE-PAGE";
+  var TALLY_URL = "https://tally.so/r/D4Ygdp";
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/contact.kadrix@gmail.com";
 
   document.getElementById('buy-link').href = PAYHIP_URL;
+  document.getElementById('analyse-link').href = TALLY_URL;
 
   /* ---------- Navigation par onglets (hash) ---------- */
-  var pages = ['accueil','simulateur','apprendre','kit','contact'];
+  var pages = ['accueil','simulateur','analyse','apprendre','kit','contact','confidentialite'];
   var burger = document.getElementById('burger');
   var navLinks = document.getElementById('nav-links');
 
@@ -745,4 +833,3 @@
 </script>
 </body>
 </html>
-
