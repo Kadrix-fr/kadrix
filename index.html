@@ -541,9 +541,9 @@
     <span class="mono">Comment ça marche</span>
     <h2>Trois étapes, 48 heures</h2>
     <div class="kit-list">
-      <div class="kit-item"><span class="num">01</span><div><h3>Vous remplissez le formulaire (5 min)</h3><p>Le lien de l'annonce et quelques ordres de grandeur sur votre financement. Rien de plus — voir l'encadré données ci-dessous.</p></div></div>
-      <div class="kit-item"><span class="num">02</span><div><h3>J'analyse le bien avec la méthode Kadrix</h3><p>Le bien passe dans le moteur complet du Kit : coûts réels, fiscalité adaptée à votre situation, DPE, HCSF, scénarios de négociation.</p></div></div>
-      <div class="kit-item"><span class="num">03</span><div><h3>Vous recevez votre rapport PDF</h3><p>Verdict couleur, chiffres traduits en décisions, prix cible de négociation chiffré et les 5 questions à poser à l'agent ou au vendeur.</p></div></div>
+      <div class="kit-item"><span class="num">01</span><div><h3>Vous commandez votre analyse</h3><p>Paiement sécurisé par carte ou PayPal. Vous recevez immédiatement le lien vers le formulaire de demande.</p></div></div>
+      <div class="kit-item"><span class="num">02</span><div><h3>Vous décrivez le bien (5 min)</h3><p>Le lien de l'annonce et quelques ordres de grandeur sur votre financement. Rien de plus — voir l'encadré données ci-dessous.</p></div></div>
+      <div class="kit-item"><span class="num">03</span><div><h3>Vous recevez votre rapport PDF sous 48 h</h3><p>Le bien passe dans le moteur complet du Kit : verdict couleur, chiffres traduits en décisions, prix cible de négociation et les 5 questions à poser à l'agent ou au vendeur.</p></div></div>
     </div>
   </div>
 
@@ -559,6 +559,7 @@
     <div class="new">29 €</div>
     <div class="sub">Rapport PDF sous 48 h ouvrées · Une question de suivi incluse · −15 € sur le Kit complet</div>
     <a href="#" class="btn btn-gold" id="analyse-link">Demander mon analyse</a>
+    <div class="sub" id="analyse-note" style="margin-top:16px;margin-bottom:0">Garantie simple : si l'annonce transmise est inexploitable ou que l'analyse ne peut pas être produite, remboursement intégral.</div>
   </div>
 
   <div class="learn-block faq">
@@ -655,10 +656,28 @@
   // ⚙️ À personnaliser :
   var PAYHIP_URL = "https://payhip.com/VOTRE-PAGE";
   var TALLY_URL = "https://tally.so/r/D4Ygdp";
+
+  // ⚙️ INTERRUPTEUR ANALYSE : "beta" (gratuit, bouton → formulaire Tally)
+  // ou "live" (bouton → page de paiement Payhip). Le jour du lancement :
+  // 1) remplacez PAYHIP_ANALYSE_URL par l'URL du produit Analyse sur Payhip
+  // 2) changez "beta" en "live" ci-dessous. C'est tout.
+  var ANALYSE_MODE = "beta";
+  var PAYHIP_ANALYSE_URL = "https://payhip.com/VOTRE-PRODUIT-ANALYSE";
+
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/contact.kadrix@gmail.com";
 
   document.getElementById('buy-link').href = PAYHIP_URL;
-  document.getElementById('analyse-link').href = TALLY_URL;
+
+  var aLink = document.getElementById('analyse-link');
+  var aNote = document.getElementById('analyse-note');
+  if (ANALYSE_MODE === "live") {
+    aLink.href = PAYHIP_ANALYSE_URL;
+    aLink.textContent = "Commander mon analyse — 29 €";
+  } else {
+    aLink.href = TALLY_URL;
+    aLink.textContent = "Demander mon analyse — offre de lancement";
+    aNote.textContent = "Période de lancement : les premières analyses sont offertes en échange d'un retour d'expérience. Aucun paiement demandé.";
+  }
 
   /* ---------- Navigation par onglets (hash) ---------- */
   var pages = ['accueil','simulateur','analyse','apprendre','kit','contact','confidentialite'];
@@ -833,4 +852,3 @@
 </script>
 </body>
 </html>
-
