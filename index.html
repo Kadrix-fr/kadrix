@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kadrix — Kit Investisseur Locatif</title>
 <meta name="description" content="Analysez la rentabilité réelle d'un investissement locatif : simulateur gratuit, guide de l'investisseur et Kit Excel complet (BRRRR, LMNP vs SCI à l'IS, DPE, HCSF).">
+<link rel="canonical" href="https://kadrix-fr.github.io/kadrix/">
+<meta name="theme-color" content="#0D1B2E">
+<!-- Open Graph : aperçu du lien sur LinkedIn, WhatsApp, etc. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kadrix">
+<meta property="og:title" content="Kadrix — Un bien peut être beau. Kadrix vous dit s'il est rentable.">
+<meta property="og:description" content="Simulateur de rentabilité locative gratuit (rendement, cash-flow, HCSF), analyses sur mesure sous 48 h et Kit Excel complet pour investir sans mauvaise surprise.">
+<meta property="og:url" content="https://kadrix-fr.github.io/kadrix/">
+<meta property="og:image" content="https://kadrix-fr.github.io/kadrix/logo-kadrix-512.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Kadrix","url":"https://kadrix-fr.github.io/kadrix/","description":"Simulateur et outils d'analyse de rentabilité pour l'investissement locatif en France.","inLanguage":"fr-FR"}
+</script>
+<!-- GoatCounter : mesure d'audience sans cookie (comptage manuel, navigation par onglets) -->
+<script data-goatcounter="https://kadrix.goatcounter.com/count" data-goatcounter-settings='{"no_onload": true}' async src="//gc.zgo.at/count.js"></script>
 <link rel="icon" type="image/png" href="favicon-kadrix.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -666,6 +682,18 @@
 
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/contact.kadrix@gmail.com";
 
+  /* ---------- Mesure d'audience (GoatCounter, sans cookie) ---------- */
+  function trackPage(page){
+    if(window.goatcounter && window.goatcounter.count){
+      window.goatcounter.count({ path: '/' + page, title: page });
+    }
+  }
+  function trackEvent(name){
+    if(window.goatcounter && window.goatcounter.count){
+      window.goatcounter.count({ path: name, event: true });
+    }
+  }
+
   document.getElementById('buy-link').href = PAYHIP_URL;
 
   var aLink = document.getElementById('analyse-link');
@@ -678,6 +706,8 @@
     aLink.textContent = "Demander mon analyse — offre de lancement";
     aNote.textContent = "Période de lancement : les premières analyses sont offertes en échange d'un retour d'expérience. Aucun paiement demandé.";
   }
+  aLink.addEventListener('click', function(){ trackEvent('clic-analyse'); });
+  document.getElementById('buy-link').addEventListener('click', function(){ trackEvent('clic-kit'); });
 
   /* ---------- Navigation par onglets (hash) ---------- */
   var pages = ['accueil','simulateur','analyse','apprendre','kit','contact','confidentialite'];
@@ -695,6 +725,7 @@
     navLinks.classList.remove('open');
     burger.setAttribute('aria-expanded','false');
     window.scrollTo({top:0});
+    trackPage(page);
     document.title = (page==='accueil' ? 'Kadrix — Kit Investisseur Locatif' :
       page.charAt(0).toUpperCase()+page.slice(1)+' — Kadrix');
   }
@@ -734,6 +765,7 @@
     var loyerEq = charges/12 + mensu;
 
     last = {total:total, notaire:notaire, cf:cf, margeMensu:margeMensu, loyerEq:loyerEq};
+    trackEvent('simulation-lancee');
 
     document.getElementById('r-brut').textContent = pct(brut);
     var rn = document.getElementById('r-net');
@@ -793,6 +825,7 @@
       return;
     }
     err.style.display = 'none';
+    trackEvent('lead-email-simulateur');
 
     try{
       fetch(FORM_ENDPOINT, {
@@ -838,6 +871,7 @@
     }).then(function(r){
       if(!r.ok) throw new Error();
       status.textContent = 'Message envoyé. Réponse sous 24 à 48 h.';
+      trackEvent('contact-envoye');
       status.className = 'form-msg ok';
       document.getElementById('c-msg').value = '';
     }).catch(function(){
