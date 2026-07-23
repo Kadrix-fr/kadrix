@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kadrix-fr.github.io/kadrix/sitemap.xml
+Sitemap: https://kadrix-fr.fr/sitemap.xml
