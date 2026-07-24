@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kadrix — Kit Investisseur Locatif</title>
-<meta name="description" content="Analysez la rentabilité réelle d'un investissement locatif : simulateur gratuit, guide de l'investisseur et Kit Excel complet (BRRRR, LMNP vs SCI à l'IS, DPE, HCSF).">
+<meta name="description" content="Ce bien locatif est-il rentable ? Simulateur gratuit (cash-flow, rendement net, HCSF, gain à la revente), guide de l'investisseur et Kit Excel complet : fiscalité, DPE, stress test.">
 <link rel="canonical" href="https://kadrix-fr.fr/">
 <meta name="theme-color" content="#0D1B2E">
 <!-- Open Graph : aperçu du lien sur LinkedIn, WhatsApp, etc. -->
@@ -144,6 +144,60 @@
   .field input::placeholder{color:rgba(245,241,230,.28)}
   .btn-full{width:100%;padding:16px;margin-top:6px}
 
+  /* sous-titres de blocs dans le simulateur */
+  .subhead{
+    font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold);
+    margin:30px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  }
+  .subhead:first-child{margin-top:0}
+  .subhead .opt{font-family:'IBM Plex Sans',sans-serif;text-transform:none;letter-spacing:0;color:var(--faint);font-size:.72rem}
+
+  /* blocs repliables du simulateur */
+  details.simblock{margin:26px 0 0}
+  details.simblock > summary{
+    cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+    font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);padding-bottom:8px;border-bottom:1px solid var(--line);
+  }
+  details.simblock > summary::-webkit-details-marker{display:none}
+  details.simblock > summary::after{content:'+';font-size:1.1rem;color:var(--gold);flex-shrink:0}
+  details.simblock[open] > summary::after{content:'−'}
+  details.simblock > summary .opt{
+    font-family:'IBM Plex Sans',sans-serif;text-transform:none;letter-spacing:0;
+    color:var(--faint);font-size:.72rem;flex:1;text-align:right;
+  }
+  details.simblock .field:first-of-type{margin-top:18px}
+
+  /* alerte DPE */
+  .dpe-alert{
+    margin-top:10px;padding:12px 14px;border-radius:8px;font-size:.84rem;line-height:1.5;display:none;
+  }
+  .dpe-alert.show{display:block}
+  .dpe-alert.warn{background:rgba(217,142,43,.12);border:1px solid rgba(217,142,43,.45);color:var(--amber)}
+  .dpe-alert.danger{background:rgba(196,82,62,.12);border:1px solid rgba(196,82,62,.5);color:var(--red)}
+
+  /* sélecteur segmenté (ancien/neuf, seul/à plusieurs) */
+  .seg{display:flex;gap:8px}
+  .seg input{position:absolute;opacity:0;pointer-events:none}
+  .seg label{
+    flex:1;text-align:center;cursor:pointer;padding:13px 8px;border-radius:8px;
+    background:var(--navy-2);border:1px solid var(--line);color:var(--muted);
+    font-family:'IBM Plex Sans',sans-serif;font-size:.92rem;transition:all .18s;
+    display:block;margin:0;text-transform:none;letter-spacing:0;
+  }
+  .seg label:hover{border-color:var(--gold)}
+  .seg input:checked + label{background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:600}
+  .seg input:focus-visible + label{outline:3px solid var(--gold-soft);outline-offset:2px}
+
+  /* mensualité calculée */
+  .computed{
+    margin-top:10px;padding:12px 16px;border-radius:8px;
+    background:var(--navy-2);border:1px dashed var(--line);
+    font-size:.88rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  .computed b{font-family:'IBM Plex Mono',monospace;color:var(--gold-soft);font-size:1rem}
+
   .results{display:none;padding:8px 0 30px}
   .results.show{display:block;animation:fade .45s ease}
   .verdict{border-radius:12px;padding:26px 24px;margin-bottom:14px;border:1px solid}
@@ -272,30 +326,44 @@
 <!-- ==================== ACCUEIL ==================== -->
 <main class="page" id="page-accueil">
   <section class="hero">
-    <span class="mono">Kit Investisseur Locatif — France</span>
-    <h1>Un bien peut être beau.<br>Kadrix vous dit s'il est <em>rentable</em>.</h1>
-    <p>Simulateur gratuit, guide de l'investisseur et Kit Excel complet pour analyser un investissement locatif comme une banque le ferait : rendement réel, fiscalité, DPE, ratio HCSF et stress test.</p>
+    <span class="mono">Investissement locatif — France</span>
+    <h1>« Est-ce que je fais<br>une <em>bonne affaire</em> ? »</h1>
+    <p>C'est la seule question qui compte devant une annonce. Y répondre demande de savoir combien le bien vous coûtera vraiment chaque mois, ce que vous récupérerez à la revente, et si votre banque suivra. Kadrix fait ces calculs à votre place, avant que vous ne signiez.</p>
     <div class="btn-row">
       <a href="#simulateur" class="btn btn-gold" data-nav>Tester un bien gratuitement</a>
       <a href="#kit" class="btn btn-ghost" data-nav>Découvrir le Kit</a>
     </div>
   </section>
 
+  <div class="learn-block" style="margin-top:40px">
+    <span class="mono">Avant de signer</span>
+    <h2>Les 6 questions auxquelles il faut savoir répondre</h2>
+    <p style="margin-top:12px">Un investissement locatif se joue sur six points. En rater un seul suffit à transformer une bonne affaire apparente en charge mensuelle pendant vingt ans.</p>
+    <div style="margin-top:18px">
+      <details class="term"><summary>Ce bien me rapporte ou me coûte combien chaque mois&nbsp;?</summary><div>C'est le cash-flow : loyer encaissé moins charges, moins mensualité de crédit. Un cash-flow négatif n'est pas rédhibitoire s'il est choisi et soutenable — mais il doit être connu <em>avant</em>, pas découvert au premier avis d'échéance.</div></details>
+      <details class="term"><summary>Combien je récupère vraiment si je revends dans 10 ans&nbsp;?</summary><div>La seconde rentabilité, celle que presque personne ne calcule. Elle additionne le capital remboursé par le locataire, l'évolution du prix du bien et les cash-flows encaissés. Deux biens au même rendement locatif peuvent donner des sorties très différentes.</div></details>
+      <details class="term"><summary>Ma banque va-t-elle suivre — et pourrai-je racheter après&nbsp;?</summary><div>Le ratio HCSF plafonne votre endettement à 35 % de vos revenus, loyers futurs comptés à 70 %. C'est ce calcul qui décide si votre dossier passe, et surtout combien de biens vous pourrez encore acheter ensuite.</div></details>
+      <details class="term"><summary>Sous quel statut ou quelle structure j'achète&nbsp;?</summary><div>Seul, l'arbitrage porte sur le régime fiscal : en meublé, LMNP au réel ou micro-BIC ; en nu, régime réel ou micro-foncier. À plusieurs, la question devient juridique : indivision, SCI à l'IR ou SCI à l'IS. Ce choix se fait avant la signature et pèse des dizaines de milliers d'euros.</div></details>
+      <details class="term"><summary>Le bien sera-t-il encore louable dans 5 ans&nbsp;?</summary><div>Le DPE conditionne le droit de louer : les G sont interdits depuis 2025, les F le seront en 2028, les E en 2034. Un prix attractif sur une passoire thermique correspond souvent à la décote que le marché applique déjà.</div></details>
+      <details class="term"><summary>Que se passe-t-il si les taux montent ou si le loyer baisse&nbsp;?</summary><div>Un bon dossier survit au scénario pessimiste, pas seulement au tableur du vendeur. Vacance locative, hausse de taux au refinancement, gros travaux : ces hypothèses doivent être testées avant l'offre.</div></details>
+    </div>
+  </div>
+
   <section class="pillars">
     <div class="pillar">
-      <span class="mono">01 · Simuler</span>
-      <h3>30 secondes pour un verdict</h3>
-      <p>Rendement brut, net, cash-flow et ratio HCSF calculés instantanément. Vert, orange ou rouge : vous savez tout de suite si le bien mérite une visite.</p>
+      <span class="mono">01 · Gratuit</span>
+      <h3>Répondez aux 3 premières en 30 secondes</h3>
+      <p>Le simulateur calcule votre cash-flow réel, votre gain à la revente et votre ratio HCSF. Verdict vert, orange ou rouge : vous savez si le bien mérite une visite.</p>
     </div>
     <div class="pillar">
       <span class="mono">02 · Comprendre</span>
       <h3>Le guide de l'investisseur</h3>
-      <p>Les stratégies (LMNP, colocation, immeuble, BRRRR), la fiscalité et le vocabulaire indispensable — sans jargon inutile, avec les chiffres qui comptent.</p>
+      <p>Les stratégies (LMNP, colocation, immeuble, BRRRR), la fiscalité et le vocabulaire que banquiers et notaires emploient — sans jargon inutile.</p>
     </div>
     <div class="pillar">
       <span class="mono">03 · Décider</span>
-      <h3>Le Kit Excel complet</h3>
-      <p>9 onglets pour analyser comme un pro : BRRRR, LMNP vs SCI à l'IS, risque DPE 2028, stress test et scoring sur 5 critères.</p>
+      <h3>Les 6, en profondeur</h3>
+      <p>Le Kit Excel traite les six questions sur votre projet : comparatif fiscal chiffré, risque DPE, stress test de taux et scoring sur 5 critères.</p>
     </div>
   </section>
 
@@ -314,35 +382,142 @@
   <section class="section">
     <span class="mono">Simulateur gratuit — 30 secondes</span>
     <h1>Ce bien est-il vraiment rentable&nbsp;?</h1>
-    <p class="lede">Rendement net, cash-flow et ratio d'endettement HCSF, avec les frais de notaire estimés automatiquement. Aucune donnée n'est stockée sur cette page.</p>
+    <p class="lede">Cinq champs suffisent pour obtenir votre verdict : cash-flow réel, rendement net, gain à la revente et TRI. Le reste est estimé avec des hypothèses prudentes que vous pourrez corriger ensuite. Aucune donnée n'est stockée sur cette page.</p>
   </section>
 
   <section class="sim" aria-label="Simulateur">
+
+    <div class="subhead">L'essentiel <span class="opt">— 5 champs suffisent</span></div>
     <div class="field">
-      <label for="prix">Prix d'achat (FAI) <span class="hint">notaire ~8% ajouté auto</span></label>
+      <label>Type de bien <span class="hint">détermine les frais de notaire</span></label>
+      <div class="seg">
+        <input type="radio" name="typebien" id="t-ancien" value="ancien" checked>
+        <label for="t-ancien">Ancien <span style="opacity:.7">(~8 %)</span></label>
+        <input type="radio" name="typebien" id="t-neuf" value="neuf">
+        <label for="t-neuf">Neuf / VEFA <span style="opacity:.7">(~2,5 %)</span></label>
+      </div>
+    </div>
+    <div class="field">
+      <label for="prix">Prix d'achat, frais d'agence inclus <span class="hint">hors frais de notaire, ajoutés automatiquement</span></label>
       <input type="number" id="prix" inputmode="numeric" placeholder="180 000" min="0">
     </div>
     <div class="field">
-      <label for="travaux">Travaux &amp; ameublement <span class="hint">0 si aucun</span></label>
-      <input type="number" id="travaux" inputmode="numeric" placeholder="15 000" min="0" value="0">
-    </div>
-    <div class="field">
-      <label for="loyer">Loyer mensuel hors charges</label>
+      <label for="loyer">Loyer mensuel hors charges <span class="hint">le loyer que vous encaissez réellement</span></label>
       <input type="number" id="loyer" inputmode="numeric" placeholder="750" min="0">
     </div>
     <div class="field">
-      <label for="charges">Charges annuelles <span class="hint">copro + taxe foncière + assurances</span></label>
-      <input type="number" id="charges" inputmode="numeric" placeholder="2 400" min="0">
+      <label for="apport">Apport personnel <span class="hint">0 si financement à 110 %</span></label>
+      <input type="number" id="apport" inputmode="numeric" placeholder="20 000" min="0" value="0">
     </div>
     <div class="field">
-      <label for="mensualite">Mensualité de crédit estimée <span class="hint">0 si achat comptant</span></label>
-      <input type="number" id="mensualite" inputmode="numeric" placeholder="820" min="0">
+      <label for="taux">Taux d'intérêt annuel (%) <span class="hint">assurance comprise — ordre de grandeur actuel : 3 à 4 %</span></label>
+      <input type="number" id="taux" inputmode="decimal" step="0.01" placeholder="3,5" min="0">
     </div>
     <div class="field">
-      <label for="revenus">Vos revenus nets mensuels <span class="hint">pour le ratio HCSF</span></label>
-      <input type="number" id="revenus" inputmode="numeric" placeholder="3 200" min="0">
+      <label for="duree">Durée du crédit (années) <span class="hint">15, 20 ou 25 ans</span></label>
+      <input type="number" id="duree" inputmode="numeric" placeholder="20" min="1" max="30" value="20">
+      <div class="computed" id="mensu-box" style="display:none">
+        <span>Mensualité calculée</span><b id="mensu-val">—</b>
+      </div>
     </div>
-    <button class="btn btn-gold btn-full" id="calc">Analyser ce bien</button>
+
+    <button class="btn btn-gold btn-full" id="calc" style="margin-top:22px">Analyser ce bien</button>
+    <p style="text-align:center;font-size:.8rem;color:var(--faint);margin-top:12px;line-height:1.5">
+      Le reste est estimé automatiquement avec des hypothèses prudentes.<br>Vous pourrez tout affiner après le résultat.
+    </p>
+
+    <div id="advanced" style="display:none;margin-top:30px;padding-top:6px;border-top:1px solid var(--line)">
+      <p style="font-size:.82rem;color:var(--muted);line-height:1.55;margin:18px 0 6px">Les champs ci-dessous sont pré-remplis avec nos estimations. Corrigez ceux que vous connaissez, laissez les autres.</p>
+
+      <details class="simblock" open>
+        <summary>Le bien en détail <span class="opt">travaux et DPE</span></summary>
+        <div class="field">
+          <label for="travaux">Travaux &amp; ameublement <span class="hint">0 si aucun</span></label>
+          <input type="number" id="travaux" inputmode="numeric" placeholder="0" min="0" value="0">
+        </div>
+        <div class="field">
+          <label for="dpe">Classe DPE <span class="hint">conditionne le droit de louer dans les années à venir</span></label>
+          <select id="dpe" style="width:100%;padding:14px 16px;background:var(--navy-2);border:1px solid var(--line);border-radius:8px;color:var(--cream);font-family:'IBM Plex Mono',monospace;font-size:1.05rem">
+            <option value="">Je ne sais pas encore</option>
+            <option value="A">A</option><option value="B">B</option><option value="C">C</option>
+            <option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option>
+          </select>
+          <div class="dpe-alert" id="dpe-alert"></div>
+        </div>
+      </details>
+
+      <details class="simblock">
+        <summary>Les charges annuelles <span class="opt">estimées d'après le loyer</span></summary>
+        <div class="field">
+          <label for="copro">Charges de copropriété non récupérables <span class="hint">celles qui restent à votre charge — 0 si maison</span></label>
+          <input type="number" id="copro" inputmode="numeric" placeholder="600" min="0">
+        </div>
+        <div class="field">
+          <label for="tf">Taxe foncière <span class="hint">estimée à 1 mois de loyer si vous ne la connaissez pas</span></label>
+          <input type="number" id="tf" inputmode="numeric" placeholder="900" min="0">
+        </div>
+        <div class="field">
+          <label for="assur">Assurance propriétaire (PNO) <span class="hint">≈ 150 €/an — obligatoire en copropriété</span></label>
+          <input type="number" id="assur" inputmode="numeric" placeholder="150" min="0" value="150">
+        </div>
+      </details>
+
+      <details class="simblock">
+        <summary>Votre situation <span class="opt">pour le ratio HCSF</span></summary>
+        <div class="field">
+          <label for="revenus">Revenus mensuels nets avant impôt <span class="hint">le « net fiscal » de votre fiche de paie — c'est ce que regarde la banque</span></label>
+          <input type="number" id="revenus" inputmode="numeric" placeholder="3 200" min="0">
+        </div>
+        <div class="field">
+          <label for="credits">Mensualités de crédits en cours <span class="hint">tous crédits confondus — 0 si aucun</span></label>
+          <input type="number" id="credits" inputmode="numeric" placeholder="0" min="0" value="0">
+        </div>
+        <div class="field">
+          <label>Vous investissez… <span class="hint">détermine les options juridiques et fiscales</span></label>
+          <div class="seg">
+            <input type="radio" name="detention" id="d-seul" value="seul" checked>
+            <label for="d-seul">Seul</label>
+            <input type="radio" name="detention" id="d-plusieurs" value="plusieurs">
+            <label for="d-plusieurs">À plusieurs</label>
+          </div>
+        </div>
+      </details>
+
+      <details class="simblock">
+        <summary>La revente <span class="opt">gain de sortie et TRI</span></summary>
+        <div class="field">
+          <label for="detention">Durée de détention envisagée (années)</label>
+          <input type="number" id="detention" inputmode="numeric" placeholder="10" min="1" max="30" value="10">
+        </div>
+        <div class="field">
+          <label for="reval">Revalorisation annuelle du bien (%) <span class="hint">0 % par défaut : le marché ne monte pas partout. À vous d'être optimiste si vous le souhaitez.</span></label>
+          <input type="number" id="reval" inputmode="decimal" step="0.1" placeholder="0" min="-5" max="10" value="0">
+        </div>
+        <div class="field">
+          <label for="fraisvente">Frais de revente (%) <span class="hint">commission d'agence — 4 à 7 % selon les mandats</span></label>
+          <input type="number" id="fraisvente" inputmode="decimal" step="0.1" placeholder="5" min="0" max="15" value="5">
+        </div>
+      </details>
+
+      <details class="simblock">
+        <summary>Hypothèses de prudence <span class="opt">déjà pré-remplies</span></summary>
+        <p style="font-size:.82rem;color:var(--muted);line-height:1.55;margin:16px 0 4px">Ce sont les postes que la plupart des calculs « faits maison » oublient.</p>
+        <div class="field">
+          <label for="vacance">Vacance locative (% des loyers) <span class="hint">5 % ≈ 3 semaines sans locataire par an</span></label>
+          <input type="number" id="vacance" inputmode="decimal" step="0.5" placeholder="5" min="0" max="50" value="5">
+        </div>
+        <div class="field">
+          <label for="gestion">Gestion locative (% des loyers) <span class="hint">7 % environ si agence · 0 si vous gérez vous-même</span></label>
+          <input type="number" id="gestion" inputmode="decimal" step="0.5" placeholder="0" min="0" max="20" value="0">
+        </div>
+        <div class="field">
+          <label for="capex">Provision gros travaux (% des loyers) <span class="hint">toiture, chaudière, ravalement — ils arrivent toujours</span></label>
+          <input type="number" id="capex" inputmode="decimal" step="0.5" placeholder="5" min="0" max="30" value="5">
+        </div>
+      </details>
+
+      <button class="btn btn-gold btn-full" id="recalc" style="margin-top:24px">Recalculer avec ces valeurs</button>
+    </div>
   </section>
 
   <section class="results" id="results" aria-live="polite">
@@ -356,12 +531,12 @@
       <div class="stat">
         <div class="s-label">Rendement brut</div>
         <div class="s-value c-gold" id="r-brut">—</div>
-        <div class="s-sub">loyers annuels / coût total</div>
+        <div class="s-sub" id="r-brut-sub">sur le coût total, notaire inclus</div>
       </div>
       <div class="stat">
         <div class="s-label">Rendement net</div>
         <div class="s-value" id="r-net">—</div>
-        <div class="s-sub">charges déduites, hors impôts</div>
+        <div class="s-sub">vacance et provisions déduites, hors impôts</div>
       </div>
       <div class="stat">
         <div class="s-label">Cash-flow mensuel</div>
@@ -375,17 +550,50 @@
       </div>
     </div>
 
+    <div class="learn-block" id="revente-block" style="margin:14px 0 0;padding:22px 22px 18px">
+      <span class="mono" style="display:block;margin-bottom:10px">La seconde rentabilité — celle de la sortie</span>
+      <h2 style="font-size:1.15rem" id="rev-title">Si vous revendez dans 10 ans</h2>
+      <div style="margin-top:14px">
+        <div class="row" style="display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed rgba(245,241,230,.12);font-size:.92rem">
+          <span style="color:var(--muted)">Valeur estimée du bien</span><b id="rev-valeur" style="font-family:'IBM Plex Mono',monospace">—</b>
+        </div>
+        <div class="row" style="display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed rgba(245,241,230,.12);font-size:.92rem">
+          <span style="color:var(--muted)">Frais d'agence à la revente</span><b id="rev-frais" style="font-family:'IBM Plex Mono',monospace">—</b>
+        </div>
+        <div class="row" style="display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed rgba(245,241,230,.12);font-size:.92rem">
+          <span style="color:var(--muted)">Capital restant dû à la banque</span><b id="rev-crd" style="font-family:'IBM Plex Mono',monospace">—</b>
+        </div>
+        <div class="row" style="display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed rgba(245,241,230,.12);font-size:.92rem">
+          <span style="color:var(--muted)">Cash-flow cumulé sur la période</span><b id="rev-cf" style="font-family:'IBM Plex Mono',monospace">—</b>
+        </div>
+        <div class="row" style="display:flex;justify-content:space-between;gap:14px;padding:12px 0 8px;border-bottom:1px solid var(--line);font-size:1rem">
+          <span style="color:var(--cream);font-weight:600">Gain net total estimé</span><b id="rev-gain" style="font-family:'IBM Plex Mono',monospace;font-size:1.15rem">—</b>
+        </div>
+        <div class="row" style="display:flex;justify-content:space-between;gap:14px;padding:14px 0 0;font-size:1rem">
+          <span style="color:var(--cream);font-weight:600">Rentabilité annuelle (TRI)<br><span style="font-weight:400;font-size:.78rem;color:var(--faint)">le seul chiffre comparable à un autre placement</span></span><b id="rev-tri" style="font-family:'IBM Plex Mono',monospace;font-size:1.35rem">—</b>
+        </div>
+      </div>
+      <p style="margin-top:14px;font-size:.78rem;color:var(--faint);line-height:1.5">Gain net = prix de revente − frais d'agence − capital restant dû − apport + cash-flows encaissés. Le TRI rapporte ce gain au capital réellement immobilisé et à la durée. Hors fiscalité sur la plus-value et sur les loyers — le Kit complet les intègre.</p>
+    </div>
+
+    <div class="learn-block" id="estim-block" style="margin:14px 0 0;padding:22px">
+      <span class="mono" style="display:block;margin-bottom:10px">Ce que nous avons estimé pour vous</span>
+      <h2 style="font-size:1.1rem">Ces chiffres ne sont pas les vôtres&nbsp;? Corrigez-les.</h2>
+      <ul id="estim-list" style="list-style:none;margin:14px 0 0;padding:0;font-size:.9rem"></ul>
+      <button class="btn btn-ghost btn-full" id="affiner" style="margin-top:18px">Affiner avec mes chiffres réels</button>
+    </div>
+
     <div class="locked" id="locked">
       <div class="blur" aria-hidden="true">
-        <div class="row"><span>Coût total de l'opération</span><b>████ €</b></div>
-        <div class="row"><span>Frais de notaire estimés</span><b>████ €</b></div>
+        <div class="row"><span>Prix maximum pour un cash-flow à l'équilibre</span><b>████ €</b></div>
+        <div class="row"><span>Marge de négociation nécessaire</span><b>████ %</b></div>
+        <div class="row"><span>Loyer d'équilibre (cash-flow 0)</span><b>████ €</b></div>
         <div class="row"><span>Effort d'épargne annuel</span><b>████ €</b></div>
         <div class="row"><span>Marge avant refus bancaire</span><b>████ €</b></div>
-        <div class="row"><span>Loyer d'équilibre (cash-flow 0)</span><b>████ €</b></div>
       </div>
       <div class="gate" id="gate">
-        <h3>Débloquez l'analyse détaillée</h3>
-        <p>Coût total, frais de notaire, loyer d'équilibre et marge bancaire — envoyés en clair, gratuitement.</p>
+        <h3>À quel prix ce bien devient-il rentable&nbsp;?</h3>
+        <p>Le prix maximum à ne pas dépasser pour un cash-flow à l'équilibre, et la marge de négociation que cela représente. Gratuit.</p>
         <div class="gform">
           <input type="email" id="email" placeholder="votre@email.fr" autocomplete="email" aria-label="Votre email">
           <button class="btn btn-gold" id="unlock" style="padding:12px 18px;font-size:.74rem">Débloquer</button>
@@ -394,21 +602,39 @@
         <div class="privacy">Pas de spam. Uniquement des analyses concrètes d'investissement locatif. <a href="#confidentialite" data-nav style="color:inherit">Confidentialité</a></div>
       </div>
       <div class="detail" id="detail">
+        <div class="row"><span><b style="color:var(--gold-soft)">Prix maximum pour un cash-flow à l'équilibre</b></span><b id="d-prixmax">—</b></div>
+        <div class="row"><span>Marge de négociation nécessaire</span><b id="d-marge-nego">—</b></div>
+        <div class="row"><span>Loyer d'équilibre (cash-flow 0)</span><b id="d-equilibre">—</b></div>
         <div class="row"><span>Coût total de l'opération</span><b id="d-total">—</b></div>
-        <div class="row"><span>Frais de notaire estimés (8&nbsp;%)</span><b id="d-notaire">—</b></div>
+        <div class="row"><span>Frais de notaire estimés <span id="d-notaire-rate">(8 %)</span></span><b id="d-notaire">—</b></div>
         <div class="row"><span>Effort d'épargne annuel</span><b id="d-effort">—</b></div>
         <div class="row"><span>Marge de mensualité avant 35&nbsp;%</span><b id="d-marge">—</b></div>
-        <div class="row"><span>Loyer d'équilibre (cash-flow 0)</span><b id="d-equilibre">—</b></div>
       </div>
     </div>
 
     <div class="strip" style="margin-top:26px">
       <span class="mono" style="display:block;margin-bottom:10px">Aller plus loin</span>
       <h2>Ce simulateur, c'est 10&nbsp;% du Kit Investisseur Kadrix.</h2>
-      <p>Le Kit ajoute ce que le calcul simple ne voit pas : vacance locative, fiscalité (LMNP vs SCI à l'IS), risque DPE 2028, stress test de taux et scoring complet sur 5 critères.</p>
+      <p>Le Kit ajoute ce que ce simulateur laisse de côté : la fiscalité réelle sur les loyers et sur la plus-value, le comparatif chiffré des régimes et structures, le stress test de taux, la simulation BRRRR et le scoring complet sur 5 critères.</p>
       <a href="#kit" class="btn btn-gold" data-nav>Découvrir le Kit complet</a>
     </div>
   </section>
+
+  <div class="learn-block" style="margin-top:22px">
+    <span class="mono">Transparence</span>
+    <h2>Comment ces chiffres sont calculés</h2>
+    <p>Aucune boîte noire : voici exactement les règles appliquées. Vous pouvez toutes les modifier dans le formulaire.</p>
+    <div style="margin-top:16px">
+      <details class="term"><summary>Frais de notaire</summary><div>7 à 8 % du prix dans l'ancien, 2 à 3 % dans le neuf (VEFA). Le simulateur retient 8 % et 2,5 %. Le montant exact figure sur votre projet d'acte : ces taux sont des ordres de grandeur, pas une promesse.</div></details>
+      <details class="term"><summary>Rendement brut : deux chiffres, deux bases</summary><div>Les annonces calculent le brut sur le seul prix d'achat. Kadrix affiche ce chiffre pour que vous puissiez comparer, mais met en avant le brut sur le <em>coût total</em> (prix + notaire + travaux) — c'est le capital que vous engagez réellement.</div></details>
+      <details class="term"><summary>Vacance, gestion et gros travaux</summary><div>Un logement n'est pas loué 12 mois sur 12 pendant 20 ans. Par défaut : 5 % de vacance (environ 3 semaines par an), 0 % de gestion (vous gérez vous-même) et 5 % des loyers provisionnés pour les gros travaux. Ce sont ces trois lignes que la plupart des calculs « faits maison » oublient.</div></details>
+      <details class="term"><summary>Ratio HCSF</summary><div>Le Haut Conseil de Stabilité Financière plafonne le taux d'endettement à 35 %. Le calcul retenu : (mensualité du projet + crédits en cours) ÷ (revenus nets avant impôt + 70 % des loyers prévisionnels). La pondération à 70 % correspond à la pratique courante des banques.</div></details>
+      <details class="term"><summary>Calendrier DPE</summary><div>Loi Climat et Résilience : classe G interdite à la location depuis 2025, classe F en 2028, classe E en 2034. Le simulateur signale le risque mais ne chiffre pas le coût des travaux — le Kit le fait.</div></details>
+      <details class="term"><summary>Gain de sortie et TRI</summary><div>Gain net = prix de revente − frais d'agence − capital restant dû − apport + cash-flows encaissés. Le capital restant dû suit un tableau d'amortissement classique à mensualités constantes. Le TRI (taux de rendement interne) actualise ces flux : c'est le seul chiffre comparable à un autre placement.</div></details>
+      <details class="term"><summary>Ce que ce simulateur n'intègre PAS</summary><div>La fiscalité sur les loyers (elle dépend de votre régime et de votre TMI), la fiscalité sur la plus-value à la revente, le coût des travaux de rénovation énergétique, et les frais de dossier bancaire. C'est volontaire : ces postes exigent votre situation personnelle complète. Le Kit et l'analyse sur mesure les traitent.</div></details>
+    </div>
+    <p style="margin-top:16px;font-size:.85rem;color:var(--faint)">Un doute sur un calcul ou une hypothèse&nbsp;? <a href="#contact" data-nav>Écrivez-nous</a> : toute erreur signalée est corrigée et créditée.</p>
+  </div>
 </main>
 
 <!-- ==================== APPRENDRE ==================== -->
@@ -470,10 +696,19 @@
 
   <div class="learn-block">
     <span class="mono">La fiscalité en bref</span>
-    <h2>LMNP ou SCI à l'IS&nbsp;?</h2>
-    <p><strong style="color:var(--cream)">LMNP au réel</strong> : idéal pour démarrer en nom propre. L'amortissement neutralise l'impôt sur les loyers, la revente reste taxée au régime des particuliers (abattements avec la durée). Simple, efficace, mais limité si vous visez plusieurs biens et que vos revenus locatifs deviennent importants.</p>
-    <p><strong style="color:var(--cream)">SCI à l'IS</strong> : la structure des patrimoines qui grossissent. Impôt sur les sociétés (15 % jusqu'à 42 500 € de bénéfice), amortissement aussi, et les loyers peuvent se réinvestir dans la société sans passer par votre impôt personnel. Contrepartie : la plus-value à la revente est calculée sur la valeur amortie — l'addition arrive à la sortie.</p>
-    <p>Il n'y a pas de « meilleur » choix dans l'absolu : tout dépend de votre TMI, de votre horizon et de votre stratégie de revente. C'est précisément le comparatif chiffré que fait le Kit, année par année, sur votre propre projet.</p>
+    <h2>Deux questions à ne pas confondre</h2>
+    <p>Beaucoup d'articles opposent « LMNP » et « SCI » comme s'il s'agissait d'un même choix. Ce n'en est pas un : le LMNP est un <strong style="color:var(--cream)">statut fiscal</strong> en nom propre, la SCI une <strong style="color:var(--cream)">structure juridique</strong> (une société). La première question à trancher est donc : achetez-vous seul, ou à plusieurs&nbsp;?</p>
+
+    <h3 style="font-size:1.05rem;margin-top:22px;color:var(--gold-soft)">Vous achetez seul — le choix du régime fiscal</h3>
+    <p><strong style="color:var(--cream)">En meublé : LMNP au réel ou micro-BIC.</strong> Le micro-BIC applique un abattement forfaitaire, simple mais souvent défavorable. Le régime réel permet d'amortir le bien et le mobilier : l'impôt sur les loyers est fréquemment neutralisé pendant 10 à 15 ans. C'est le choix par défaut de la plupart des investisseurs particuliers.</p>
+    <p><strong style="color:var(--cream)">En location nue : régime réel ou micro-foncier.</strong> Pas d'amortissement possible, mais le déficit foncier s'impute sur votre revenu global jusqu'à 10 700 €/an — intéressant sur un bien à gros travaux.</p>
+
+    <h3 style="font-size:1.05rem;margin-top:22px;color:var(--gold-soft)">Vous achetez à plusieurs — le choix de la structure</h3>
+    <p><strong style="color:var(--cream)">L'indivision</strong> est le régime par défaut : simple à créer, mais chaque décision importante requiert l'accord de tous, et chacun peut en sortir à tout moment.</p>
+    <p><strong style="color:var(--cream)">La SCI à l'IR</strong> est fiscalement transparente : chaque associé est imposé sur sa quote-part comme s'il détenait en direct. Elle organise la gouvernance et facilite la transmission, sans changer la fiscalité.</p>
+    <p><strong style="color:var(--cream)">La SCI à l'IS</strong> change tout : impôt sur les sociétés (15 % jusqu'à 42 500 € de bénéfice), amortissement du bien possible, et les loyers peuvent être réinvestis sans passer par votre impôt personnel. Contrepartie majeure : à la revente, la plus-value se calcule sur la valeur amortie — l'addition arrive à la sortie.</p>
+
+    <p style="margin-top:18px">Il n'y a pas de « meilleur » choix dans l'absolu : tout dépend de votre TMI, de votre horizon de détention et de votre stratégie de sortie. C'est précisément le comparatif chiffré que fait le Kit, année par année, sur votre propre projet.</p>
   </div>
 
   <div class="learn-block">
@@ -510,12 +745,20 @@
     <p class="lede">Un fichier Excel professionnel de 9 onglets qui analyse votre projet comme une banque et un expert-comptable le feraient — formules visibles, résultats en couleur, aucune compétence Excel requise.</p>
   </section>
 
+  <figure style="margin:0 0 12px">
+    <img src="kit-score-du-deal.png" alt="Onglet Score du Deal du Kit Investisseur Kadrix : verdict, score sur 15, notation des 5 critères et résultats détaillés"
+         style="width:100%;border-radius:12px;border:1px solid var(--line);display:block">
+    <figcaption style="margin-top:10px;font-size:.82rem;color:var(--faint);text-align:center">
+      L'onglet <strong style="color:var(--muted)">Score du Deal</strong> : votre verdict en un coup d'œil. Tout se met à jour automatiquement depuis vos hypothèses.
+    </figcaption>
+  </figure>
+
   <div class="learn-block">
     <span class="mono">Ce que contient le Kit</span>
     <h2>9 onglets, une décision claire</h2>
     <div class="kit-list">
       <div class="kit-item"><span class="num">01</span><div><h3>Analyse complète du bien</h3><p>Tous les coûts réels (notaire, travaux, vacance, gestion, CAPEX) pour un rendement net-net honnête — pas celui de l'annonce.</p></div></div>
-      <div class="kit-item"><span class="num">02</span><div><h3>Comparatif LMNP vs SCI à l'IS</h3><p>Votre projet simulé dans les deux régimes, année par année, revente incluse. Le choix qui pèse des dizaines de milliers d'euros.</p></div></div>
+      <div class="kit-item"><span class="num">02</span><div><h3>Comparatif fiscal complet</h3><p>Selon que vous achetez seul ou à plusieurs : LMNP au réel ou micro-BIC, SCI à l'IR ou à l'IS. Votre projet simulé année par année, revente incluse.</p></div></div>
       <div class="kit-item"><span class="num">03</span><div><h3>Simulateur BRRRR</h3><p>Achat décoté, rénovation, refinancement : combien d'apport vous récupérez, et quand vous pouvez enchaîner le bien suivant.</p></div></div>
       <div class="kit-item"><span class="num">04</span><div><h3>Risque DPE 2028</h3><p>Impact des interdictions de louer sur votre bien : décote à négocier ou budget travaux à provisionner.</p></div></div>
       <div class="kit-item"><span class="num">05</span><div><h3>Ratio HCSF consolidé</h3><p>Votre taux d'endettement avec tous vos crédits et revenus locatifs : ce que la banque verra, avant qu'elle ne le voie.</p></div></div>
@@ -600,7 +843,7 @@
 
   <div class="learn-block">
     <h2>Responsable de traitement</h2>
-    <p>[Prénom Nom], entrepreneur individuel — [adresse professionnelle] — SIREN [XXX XXX XXX]. Contact : <a href="mailto:contact.kadrix@gmail.com">contact.kadrix@gmail.com</a>.</p>
+    <p>Antoine Chappé, entrepreneur individuel — 26 rue du Général Beuret, 75015 Paris — SIREN 107 563 728 (SIRET 107 563 728 00016). Contact : <a href="mailto:contact.kadrix@gmail.com">contact.kadrix@gmail.com</a>.</p>
 
     <h2 style="margin-top:24px">Données collectées et finalités</h2>
     <p><strong style="color:var(--cream)">Analyse sur mesure</strong> : les informations sur le bien et votre projet de financement (prix, apport, revenus mensuels approximatifs, total des mensualités en cours) servent exclusivement à produire votre rapport. Base légale : exécution du contrat.</p>
@@ -743,7 +986,7 @@
     <a href="#mentions" data-nav>Mentions légales</a>
     <a href="#cgv" data-nav>CGV</a>
   </nav>
-  Les contenus de ce site sont fournis à titre pédagogique et ne constituent pas un conseil en investissement, un conseil fiscal ou juridique. Simulations indicatives — fiscalité non incluse dans le rendement net du simulateur. Frais de notaire estimés forfaitairement à 8 % (ancien).
+  Les contenus de ce site sont fournis à titre pédagogique et ne constituent pas un conseil en investissement, un conseil fiscal ou juridique. Simulations indicatives. Le simulateur gratuit intègre la vacance locative, les provisions de travaux et les frais de revente, mais pas la fiscalité sur les loyers ni sur la plus-value. Frais de notaire estimés à 8 % dans l'ancien et 2,5 % dans le neuf — le montant réel figure sur votre projet d'acte. Le détail complet des hypothèses est publié sur la page Simulateur.
 </footer>
 
 </div><!-- /wrap -->
@@ -826,35 +1069,171 @@
   var val = function(id){ return parseFloat(document.getElementById(id).value) || 0; };
   var last = null;
 
+  function radioVal(name){
+    var el = document.querySelector('input[name="'+name+'"]:checked');
+    return el ? el.value : null;
+  }
+
+  function computeMensualite(emprunt, tauxAnnuel, dureeAnnees){
+    var n = Math.round(dureeAnnees * 12);
+    if(emprunt <= 0 || n <= 0) return 0;
+    var r = tauxAnnuel / 100 / 12;
+    return r > 0 ? emprunt * r / (1 - Math.pow(1 + r, -n)) : emprunt / n;
+  }
+
+  /* Taux de rendement interne par dichotomie */
+  function tri(flux){
+    function npv(rate){
+      var s = 0;
+      for(var i = 0; i < flux.length; i++) s += flux[i] / Math.pow(1 + rate, i);
+      return s;
+    }
+    var lo = -0.9499, hi = 3.0;
+    if(npv(lo) * npv(hi) > 0) return null;
+    for(var k = 0; k < 300; k++){
+      var mid = (lo + hi) / 2;
+      if(npv(lo) * npv(mid) <= 0) hi = mid; else lo = mid;
+    }
+    return (lo + hi) / 2;
+  }
+
+  var DPE_INFO = {
+    A:{note:3, cls:'', msg:''},
+    B:{note:3, cls:'', msg:''},
+    C:{note:3, cls:'', msg:''},
+    D:{note:3, cls:'', msg:''},
+    E:{note:2, cls:'warn',   msg:"Classe E : location interdite à partir de 2034. Prévoyez un budget rénovation ou une décote à la négociation."},
+    F:{note:1, cls:'danger', msg:"Classe F : location interdite dès 2028, et loyer déjà gelé. Le prix doit absorber le coût des travaux ET les mois sans loyer."},
+    G:{note:1, cls:'danger', msg:"Classe G : location déjà interdite depuis 2025. Ce bien n'est pas louable en l'état."}
+  };
+
+  /* Alerte DPE en direct */
+  var dpeSel = document.getElementById('dpe');
+  function refreshDpe(){
+    var box = document.getElementById('dpe-alert');
+    var info = DPE_INFO[dpeSel.value];
+    if(info && info.msg){
+      box.textContent = info.msg;
+      box.className = 'dpe-alert show ' + info.cls;
+    } else { box.className = 'dpe-alert'; }
+  }
+  dpeSel.addEventListener('change', refreshDpe);
+
   document.getElementById('calc').addEventListener('click', function(){
-    var prix = val('prix'), travaux = val('travaux'), loyer = val('loyer'),
-        charges = val('charges'), mensu = val('mensualite'), revenus = val('revenus');
+    var typeBien  = radioVal('typebien') || 'ancien';
+    var detention = radioVal('detention') || 'seul';
+    var notaireRate = (typeBien === 'neuf') ? 0.025 : 0.08;
+
+    var prix = val('prix'), travaux = val('travaux'), loyer = val('loyer');
+
+    /* Champs non renseignés : estimations prudentes, affichées à l'utilisateur */
+    var estimations = [];
+    function estimer(id, valeurEstimee, libelle){
+      var el = document.getElementById(id);
+      /* On (ré)estime tant que l'utilisateur n'a pas saisi la valeur lui-même :
+         cela évite qu'une estimation reste figée si le loyer change. */
+      if(el.value === '' || el.value === null || el.dataset.estime === '1'){
+        el.value = Math.round(valeurEstimee);
+        el.dataset.estime = '1';
+        estimations.push(libelle);
+        return valeurEstimee;
+      }
+      return parseFloat(el.value) || 0;
+    }
+    var tf    = estimer('tf',    loyer,          'Taxe foncière : <b>' + fmt(loyer) + '</b> (1 mois de loyer)');
+    var copro = estimer('copro', loyer*12*0.05,  'Charges de copropriété : <b>' + fmt(loyer*12*0.05) + '/an</b> (5 % des loyers)');
+    var assur = val('assur');
+    var apport = val('apport'), taux = val('taux'), duree = val('duree');
+    var revenus = val('revenus'), credits = val('credits');
+    var anneesDet = val('detention') || 10, reval = val('reval'), fraisVenteP = val('fraisvente');
+    var vacanceP = val('vacance'), gestionP = val('gestion'), capexP = val('capex');
+    var dpe = dpeSel.value;
 
     if(prix <= 0 || loyer <= 0){
       alert("Indiquez au minimum le prix d'achat et le loyer mensuel.");
       return;
     }
 
-    var notaire = prix * 0.08;
-    var total = prix + travaux + notaire;
-    var brut = (loyer*12) / total * 100;
-    var net = (loyer*12 - charges) / total * 100;
-    var cf = loyer - charges/12 - mensu;
-    var base = revenus + loyer*0.7;
-    var hcsf = base > 0 ? (mensu / base * 100) : 0;
-    var margeMensu = Math.max(0, base*0.35 - mensu);
-    var loyerEq = charges/12 + mensu;
+    /* ---- Exploitation ---- */
+    var loyerBrutAn   = loyer * 12;
+    var loyerEncaisse = loyerBrutAn * (1 - vacanceP / 100);
+    var chargesFixes  = copro + tf + assur;
+    var chargesGest   = loyerEncaisse * gestionP / 100;
+    var chargesCapex  = loyerBrutAn * capexP / 100;
+    var charges       = chargesFixes + chargesGest + chargesCapex;
 
-    last = {total:total, notaire:notaire, cf:cf, margeMensu:margeMensu, loyerEq:loyerEq};
+    /* ---- Acquisition & financement ---- */
+    var notaire = prix * notaireRate;
+    var total   = prix + travaux + notaire;
+    var cashInvesti = Math.min(apport, total);
+    var emprunt = Math.max(0, total - apport);
+    var mensu   = computeMensualite(emprunt, taux, duree);
+
+    /* ---- Indicateurs ---- */
+    var brutAnnonce = loyerBrutAn / prix * 100;
+    var brutTotal   = loyerBrutAn / total * 100;
+    var net = (loyerEncaisse - charges) / total * 100;
+    var cf  = loyerEncaisse / 12 - charges / 12 - mensu;
+    var base = revenus + loyer * 0.7;
+    var totalMensu = mensu + credits;
+    var hcsf = base > 0 ? (totalMensu / base * 100) : 0;
+    var margeMensu = Math.max(0, base * 0.35 - totalMensu);
+    var loyerEq = (charges / 12 + mensu) / (1 - vacanceP / 100);
+
+    /* ---- Prix maximum pour un cash-flow à l'équilibre ---- */
+    var r = taux / 100 / 12, nTot = Math.round(duree * 12);
+    var facteur = nTot > 0 ? (r > 0 ? r / (1 - Math.pow(1 + r, -nTot)) : 1 / nTot) : 0;
+    var mensuCible = (loyerEncaisse - charges) / 12;
+    var prixMax = null, margeNego = null;
+    if(mensuCible > 0 && facteur > 0){
+      var empruntCible = mensuCible / facteur;
+      prixMax = (empruntCible + apport - travaux) / (1 + notaireRate);
+      if(prixMax > 0) margeNego = (prix - prixMax) / prix * 100;
+    }
+
+    /* ---- Sortie ---- */
+    var N = Math.max(1, Math.min(30, Math.round(anneesDet)));
+    var moisDet = N * 12;
+    var valeurRevente = prix * Math.pow(1 + reval / 100, N);
+    var fraisVente = valeurRevente * fraisVenteP / 100;
+    var crd = 0;
+    if(emprunt > 0 && nTot > 0){
+      if(moisDet >= nTot) crd = 0;
+      else if(r > 0) crd = emprunt * (Math.pow(1+r, nTot) - Math.pow(1+r, moisDet)) / (Math.pow(1+r, nTot) - 1);
+      else crd = emprunt * (1 - moisDet / nTot);
+    }
+    var cfCumul = cf * 12 * N;
+    var netSortie = valeurRevente - fraisVente - crd;
+    var gain = netSortie - cashInvesti + cfCumul;
+
+    /* TRI */
+    var triVal = null;
+    if(cashInvesti > 0){
+      var flux = [-cashInvesti];
+      for(var y = 1; y <= N; y++) flux.push(y < N ? cf * 12 : cf * 12 + netSortie);
+      triVal = tri(flux);
+    }
+
+    last = {total:total, notaire:notaire, notaireRate:notaireRate, cf:cf,
+            margeMensu:margeMensu, loyerEq:loyerEq, prixMax:prixMax, margeNego:margeNego};
     trackEvent('simulation-lancee');
+    refreshDpe();
 
-    document.getElementById('r-brut').textContent = pct(brut);
+    /* ---- Affichage ---- */
+    var mb = document.getElementById('mensu-box');
+    if(mensu > 0){
+      mb.style.display = 'flex';
+      document.getElementById('mensu-val').textContent = Math.round(mensu).toLocaleString('fr-FR') + ' €/mois';
+    } else { mb.style.display = 'none'; }
+
+    document.getElementById('r-brut').textContent = pct(brutTotal);
+    document.getElementById('r-brut-sub').textContent = 'sur coût total · ' + pct(brutAnnonce) + ' sur le prix seul (base annonces)';
     var rn = document.getElementById('r-net');
     rn.textContent = pct(net);
-    rn.className = 's-value ' + (net >= 5 ? 'c-green' : net >= 3.5 ? 'c-amber' : 'c-red');
+    rn.className = 's-value ' + (net >= 5.5 ? 'c-green' : net >= 4 ? 'c-amber' : 'c-red');
     var rc = document.getElementById('r-cf');
     rc.textContent = (cf >= 0 ? '+' : '−') + Math.round(Math.abs(cf)).toLocaleString('fr-FR') + ' €/mois';
-    rc.className = 's-value ' + (cf >= 0 ? 'c-green' : cf > -150 ? 'c-amber' : 'c-red');
+    rc.className = 's-value ' + (cf >= 0 ? 'c-green' : cf >= -100 ? 'c-amber' : 'c-red');
     var rh = document.getElementById('r-hcsf');
     if(revenus > 0){
       rh.textContent = pct(hcsf);
@@ -864,27 +1243,79 @@
       rh.className = 's-value';
     }
 
-    var score = 0, max = revenus > 0 ? 3 : 2;
-    if(net >= 5) score++; else if(net >= 3.5) score += .5;
-    if(cf >= 0) score++; else if(cf > -150) score += .5;
-    if(revenus > 0){ if(hcsf <= 33) score++; else if(hcsf <= 35) score += .5; }
+    /* Liste des estimations appliquées */
+    estimations.push('Assurance PNO : <b>' + fmt(assur) + '/an</b>');
+    estimations.push('Vacance locative : <b>' + vacanceP.toLocaleString('fr-FR') + ' %</b> des loyers');
+    estimations.push('Provision gros travaux : <b>' + capexP.toLocaleString('fr-FR') + ' %</b> des loyers');
+    if(!revenus) estimations.push('Ratio HCSF : <b>non calculé</b> (vos revenus ne sont pas renseignés)');
+    if(!dpe) estimations.push('Classe DPE : <b>non renseignée</b> — non prise en compte dans le verdict');
+    var ul = document.getElementById('estim-list');
+    ul.innerHTML = estimations.map(function(t){
+      return '<li style="padding:7px 0;border-bottom:1px dashed rgba(245,241,230,.12);color:var(--muted)">' + t + '</li>';
+    }).join('');
 
-    var v = document.getElementById('verdict'),
+    document.getElementById('rev-title').textContent = 'Si vous revendez dans ' + N + ' an' + (N > 1 ? 's' : '');
+    document.getElementById('rev-valeur').textContent = fmt(valeurRevente);
+    document.getElementById('rev-frais').textContent = '− ' + fmt(fraisVente);
+    document.getElementById('rev-crd').textContent = crd > 0 ? '− ' + fmt(crd) : 'Crédit soldé';
+    var rcf = document.getElementById('rev-cf');
+    rcf.textContent = (cfCumul >= 0 ? '+ ' : '− ') + fmt(Math.abs(cfCumul));
+    rcf.style.color = cfCumul >= 0 ? '#7BD8A4' : '#EE8D7B';
+    var rg = document.getElementById('rev-gain');
+    rg.textContent = (gain >= 0 ? '+ ' : '− ') + fmt(Math.abs(gain));
+    rg.style.color = gain >= 0 ? '#7BD8A4' : '#EE8D7B';
+    var rt = document.getElementById('rev-tri');
+    if(triVal === null){
+      rt.textContent = cashInvesti > 0 ? 'n/a' : 'n/a — sans apport';
+      rt.style.color = 'var(--faint)';
+    } else {
+      rt.textContent = pct(triVal * 100) + '/an';
+      rt.style.color = triVal >= 0.06 ? '#7BD8A4' : triVal >= 0.03 ? '#F0B562' : '#EE8D7B';
+    }
+
+    /* ---- Verdict ---- */
+    var score = 0, max = 2;
+    if(net >= 5.5) score++; else if(net >= 4) score += .5;
+    if(cf >= 0) score++; else if(cf >= -100) score += .5;
+    if(revenus > 0){ max++; if(hcsf <= 33) score++; else if(hcsf <= 35) score += .5; }
+    if(dpe && DPE_INFO[dpe]){ max++; score += (DPE_INFO[dpe].note - 1) / 2; }
+
+    var fiscalMsg = (detention === 'plusieurs')
+      ? "À plusieurs, la question est d'abord juridique : indivision, SCI à l'IR ou SCI à l'IS — chaque structure a sa propre fiscalité, et le choix se fait avant la signature."
+      : "En nom propre, l'arbitrage porte sur le régime fiscal : en meublé, LMNP au réel ou micro-BIC ; en nu, régime réel ou micro-foncier.";
+
+    var v  = document.getElementById('verdict'),
         vt = document.getElementById('v-title'),
         vx = document.getElementById('v-text');
     var ratio = score / max;
+
+    /* Règles bloquantes : certains signaux ne se compensent pas.
+       Un bien bien financé mais qui saigne 150 €/mois reste un mauvais dossier. */
+    var alerteBloquante = null;
+    if(dpe === 'G') alerteBloquante = "Ce logement n'est plus louable : la location des passoires classées G est interdite depuis 2025. Tant que les travaux ne sont pas chiffrés et intégrés au prix, l'opération n'a pas de base.";
+    else if(revenus > 0 && hcsf > 35) alerteBloquante = "Le taux d'endettement dépasse le plafond de 35 % retenu par les banques : en l'état, le financement a peu de chances d'aboutir.";
+    else if(cf < -150) alerteBloquante = "Ce bien vous coûterait " + Math.round(Math.abs(cf)) + " € par mois, soit " + fmt(Math.abs(cf) * 12) + " par an d'effort d'épargne. Un cash-flow négatif peut se choisir, mais rarement à ce niveau.";
+    if(alerteBloquante) ratio = Math.min(ratio, 0.35);
+
     if(ratio >= 0.8){
       v.className = 'verdict v-green';
       vt.textContent = 'Dossier solide';
-      vx.textContent = "Rentabilité et financement cohérents. Reste à vérifier la fiscalité (LMNP vs SCI à l'IS) et le risque DPE — c'est là que se joue la rentabilité réelle après impôts.";
-    } else if(ratio >= 0.45){
+      vx.textContent = "Rentabilité et financement cohérents, vacance et provisions comprises. " + fiscalMsg + " Il reste à vérifier la fiscalité sur les loyers, que ce simulateur n'intègre pas.";
+    } else if(ratio >= 0.5){
       v.className = 'verdict v-amber';
       vt.textContent = 'À négocier';
-      vx.textContent = "Le bien tient debout mais sans marge de sécurité. Une négociation du prix ou une optimisation du financement peut faire basculer le dossier du bon côté.";
+      vx.textContent = "Le bien tient debout mais sans marge de sécurité. " + (margeNego !== null && margeNego > 0 ? "Il faudrait négocier environ " + Math.round(margeNego) + " % pour atteindre l'équilibre. " : "") + fiscalMsg;
     } else {
       v.className = 'verdict v-red';
       vt.textContent = "Signaux d'alerte";
-      vx.textContent = "En l'état, ce bien détruit de la trésorerie ou bloque votre capacité d'emprunt. Soit le prix baisse fortement, soit il vaut mieux passer au suivant.";
+      vx.textContent = (alerteBloquante ? alerteBloquante + " " : "En l'état, ce bien consomme de la trésorerie chaque mois ou pèse sur votre capacité d'emprunt. ")
+        + (margeNego !== null && margeNego > 0 ? "Une négociation d'environ " + Math.round(margeNego) + " % ramènerait l'opération à l'équilibre." : "Les charges dépassent les loyers : aucun prix d'achat ne rend l'opération équilibrée en l'état.");
+    }
+
+    if(document.getElementById('advanced').style.display === 'block'){
+      document.getElementById('estim-block').style.display = 'none';
+    } else {
+      document.getElementById('estim-block').style.display = '';
     }
 
     document.getElementById('detail').classList.remove('show');
@@ -896,6 +1327,27 @@
     void res.offsetWidth;
     res.classList.add('show');
     res.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  /* Une saisie manuelle annule le statut d'estimation */
+  ['tf','copro'].forEach(function(id){
+    var el = document.getElementById(id);
+    el.addEventListener('input', function(){ el.dataset.estime = '0'; });
+  });
+
+  /* Affiner : déplie le formulaire avancé */
+  document.getElementById('affiner').addEventListener('click', function(){
+    var adv = document.getElementById('advanced');
+    adv.style.display = 'block';
+    adv.querySelectorAll('details.simblock').forEach(function(d){ d.open = true; });
+    document.getElementById('estim-block').style.display = 'none';
+    trackEvent('affinage-simulateur');
+    adv.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  /* Recalculer depuis le formulaire avancé */
+  document.getElementById('recalc').addEventListener('click', function(){
+    document.getElementById('calc').click();
   });
 
   document.getElementById('unlock').addEventListener('click', function(){
@@ -919,6 +1371,10 @@
     if(last){
       document.getElementById('d-total').textContent = fmt(last.total);
       document.getElementById('d-notaire').textContent = fmt(last.notaire);
+      document.getElementById('d-notaire-rate').textContent = '(' + (last.notaireRate*100).toLocaleString('fr-FR') + ' %)';
+      document.getElementById('d-prixmax').textContent = last.prixMax !== null ? fmt(last.prixMax) : 'Aucun prix ne suffit';
+      document.getElementById('d-marge-nego').textContent = last.margeNego === null ? '—'
+        : (last.margeNego <= 0 ? 'Aucune — déjà à l\'équilibre' : '− ' + last.margeNego.toFixed(1).replace('.', ',') + ' %');
       document.getElementById('d-effort').textContent = last.cf < 0 ? fmt(Math.abs(last.cf*12)) + '/an' : 'Aucun (cash-flow positif)';
       document.getElementById('d-marge').textContent = fmt(last.margeMensu) + '/mois';
       document.getElementById('d-equilibre').textContent = fmt(last.loyerEq) + '/mois';
