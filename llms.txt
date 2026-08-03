@@ -20,6 +20,20 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
 
 ## Articles
 
+- [DPE F : le prix cassé est-il vraiment une bonne affaire ?](https://kadrix-fr.fr/blog/dpe-f-prix-casse-bonne-affaire/) :
+  la décote d'un logement classé F compense trois coûts déjà intégrés par le marché — le coût de la
+  rénovation énergétique (400 à 900 €/m²), le gel du loyer applicable aux classes F et G depuis le
+  24 août 2022, et l'interdiction de louer au 1er janvier 2028. Cas chiffré sur un appartement de
+  175 m² en centre historique de Dijon. Traite aussi des contraintes de l'Architecte des Bâtiments de
+  France en secteur patrimonial.
+
+- [DPE F : le prix cassé est-il vraiment une bonne affaire ?](https://kadrix-fr.fr/blog/dpe-f-prix-casse-bonne-affaire/) :
+  la décote d'un logement classé F compense trois coûts déjà intégrés par le marché — le coût de la
+  rénovation énergétique (400 à 900 €/m²), le gel du loyer applicable aux classes F et G depuis le
+  24 août 2022, et l'interdiction de louer au 1er janvier 2028. Cas chiffré sur un appartement de
+  175 m² en centre historique de Dijon. Traite aussi des contraintes de l'Architecte des Bâtiments de
+  France en secteur patrimonial.
+
 - [Encadrement des loyers à Paris : l'erreur qui fausse tout calcul de rentabilité](https://kadrix-fr.fr/blog/encadrement-loyers-paris-rentabilite/) :
   le loyer parisien est plafonné par le loyer de référence majoré, fixé par arrêté préfectoral selon le
   quartier, le nombre de pièces, l'époque de construction et le type de location. Le montant investi en
