@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le blog Kadrix — analyses d'investissement locatif</title>
+<meta name="description" content="Cas réels chiffrés et décryptages réglementaires sur l'investissement locatif : encadrement des loyers, fiscalité, DPE, rentabilité.">
+<link rel="canonical" href="https://kadrix-fr.fr/blog/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Le blog Kadrix — analyses d'investissement locatif">
+<meta property="og:description" content="Cas réels chiffrés et décryptages réglementaires sur l'investissement locatif : encadrement des loyers, fiscalité, DPE, rentabilité.">
+<meta property="og:url" content="https://kadrix-fr.fr/blog/">
+<meta property="og:image" content="https://kadrix-fr.fr/logo-kadrix-512.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://kadrix-fr.fr/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1B2E; --navy-2:#122540; --navy-3:#1A3356;
+    --gold:#C9A227; --gold-soft:#E3C766; --cream:#F5F1E6;
+    --green:#7BD8A4; --amber:#F0B562; --red:#EE8D7B;
+    --line:rgba(201,162,39,.28); --muted:rgba(245,241,230,.72); --faint:rgba(245,241,230,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'IBM Plex Sans',sans-serif;background:var(--navy);color:var(--cream);
+       -webkit-font-smoothing:antialiased;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  a{color:var(--gold-soft)}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.14em;
+        text-transform:uppercase;color:var(--gold-soft)}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(13,27,46,.94);
+             backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;
+          justify-content:space-between;align-items:center;gap:16px}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:var(--cream);text-decoration:none}
+  .logo span{color:var(--gold)}
+  .nav-cta{font-size:.86rem;padding:9px 16px;border-radius:8px;background:var(--gold);
+           color:var(--navy);text-decoration:none;font-weight:600;white-space:nowrap}
+  article{padding:44px 0 20px}
+  .kicker{display:block;margin-bottom:14px}
+  article h1{font-size:clamp(1.9rem,5.2vw,2.7rem);margin-bottom:18px}
+  .meta{font-size:.82rem;color:var(--faint);margin-bottom:30px;
+        padding-bottom:20px;border-bottom:1px solid var(--line)}
+  .lede{font-size:1.12rem;color:var(--cream);margin-bottom:26px}
+  article h2{font-size:1.42rem;margin:38px 0 14px;color:var(--gold-soft)}
+  article h3{font-size:1.12rem;margin:26px 0 10px}
+  article p{margin-bottom:16px;color:var(--muted)}
+  article ul,article ol{margin:0 0 18px 22px;color:var(--muted)}
+  article li{margin-bottom:8px}
+  article strong{color:var(--cream);font-weight:600}
+  .answer{background:var(--navy-2);border-left:3px solid var(--gold);
+          padding:20px 22px;border-radius:0 10px 10px 0;margin:0 0 30px}
+  .answer p{margin:0;color:var(--cream)}
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.93rem}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid rgba(245,241,230,.12)}
+  th{color:var(--gold-soft);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+  td:last-child,th:last-child{text-align:right;font-family:'IBM Plex Mono',monospace}
+  .cta-box{background:var(--navy-2);border:1px solid var(--line);border-radius:12px;
+           padding:26px;margin:36px 0;text-align:center}
+  .cta-box h3{margin-bottom:8px;color:var(--cream)}
+  .cta-box p{color:var(--muted);font-size:.94rem;margin-bottom:18px}
+  .btn{display:inline-block;padding:13px 26px;border-radius:9px;background:var(--gold);
+       color:var(--navy);text-decoration:none;font-weight:600}
+  .faq{margin-top:14px}
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+  .faq summary{cursor:pointer;font-weight:600;color:var(--cream);list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';float:right;color:var(--gold)}
+  .faq details[open] summary::after{content:'−'}
+  .faq div{margin-top:10px;color:var(--muted);font-size:.94rem}
+  .related{margin:40px 0 0;padding-top:26px;border-top:1px solid var(--line)}
+  .related a{display:block;padding:12px 0;text-decoration:none;color:var(--cream);
+             border-bottom:1px solid rgba(245,241,230,.1)}
+  .related a span{display:block;font-size:.8rem;color:var(--faint);margin-top:3px}
+  .disclaimer{margin:34px 0 0;font-size:.8rem;color:var(--faint);font-style:italic}
+  footer{margin-top:50px;padding:28px 0 40px;border-top:1px solid var(--line);
+         font-size:.82rem;color:var(--faint);text-align:center}
+  footer a{color:var(--muted);text-decoration:none;margin:0 9px}
+  .card{display:block;background:var(--navy-2);border:1px solid var(--line);border-radius:12px;
+        padding:22px;margin-bottom:16px;text-decoration:none;transition:border-color .2s}
+  .card:hover{border-color:var(--gold)}
+  .card h2{font-size:1.2rem;margin:6px 0 8px;color:var(--cream)}
+  .card p{color:var(--muted);font-size:.93rem;margin:0}
+  @media(max-width:600px){ .nav-cta{font-size:.8rem;padding:8px 12px} }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "Le blog Kadrix", "url": "https://kadrix-fr.fr/blog/", "inLanguage": "fr-FR", "publisher": {"@type": "Organization", "name": "Kadrix", "url": "https://kadrix-fr.fr"}}</script>
+</head>
+<body>
+<header class="nav"><div class="nav-in">
+  <a class="logo" href="https://kadrix-fr.fr/">Kadrix<span>.</span></a>
+  <a class="nav-cta" href="https://kadrix-fr.fr/#simulateur">Simulateur gratuit</a>
+</div></header>
+<div class="wrap">
+<article>
+  <span class="mono kicker">Le blog</span>
+  <h1>Analyses et décryptages</h1>
+  <p class="lede">Des cas réels chiffrés et les règles qui changent une rentabilité.
+  Pas de promesses : des calculs.</p>
 
+  <a class="card" href="https://kadrix-fr.fr/blog/encadrement-loyers-paris-rentabilite/">
+    <span class="mono">Décryptage réglementaire · 28 juillet 2026</span>
+    <h2>Encadrement des loyers à Paris : l'erreur qui fausse tout calcul de rentabilité</h2>
+    <p>À Paris, le loyer est plafonné par la loi, quel que soit le montant investi en travaux.
+    Cas chiffré sur un 2 pièces du 15<sup>e</sup> : ce que le plafond change vraiment.</p>
+  </a>
+
+  <div class="cta-box">
+    <h3>Testez un bien en 30 secondes</h3>
+    <p>Cash-flow réel, rendement net, ratio HCSF et gain estimé à la revente. Gratuit, sans inscription.</p>
+    <a class="btn" href="https://kadrix-fr.fr/#simulateur">Ouvrir le simulateur</a>
+  </div>
+</article>
+<footer>
+  <a href="https://kadrix-fr.fr/">Accueil</a><a href="https://kadrix-fr.fr/blog/">Blog</a>
+  <a href="https://kadrix-fr.fr/#simulateur">Simulateur</a><a href="https://kadrix-fr.fr/#kit">Le Kit</a>
+  <a href="https://kadrix-fr.fr/#mentions">Mentions légales</a>
+  <p style="margin-top:16px">Kadrix — outil pédagogique d'analyse d'investissement locatif.</p>
+</footer>
+</div>
+</body>
+</html>
