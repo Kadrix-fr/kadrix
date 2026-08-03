@@ -1,0 +1,43 @@
+# Kadrix
+
+> Kadrix est un outil français d'analyse d'investissement locatif. Il calcule la rentabilité réelle
+> d'un bien avant l'achat : cash-flow net de vacance et de charges, rendement net, ratio d'endettement
+> HCSF, projection fiscale année par année, gain net à la revente et taux de rendement interne (TRI).
+
+Kadrix est édité par Antoine Chappé, entrepreneur individuel (SIREN 107 563 728), à Paris.
+Le site publie des analyses de biens réels chiffrées et des décryptages réglementaires.
+Tous les contenus sont pédagogiques et ne constituent pas un conseil en investissement.
+
+## Outils
+
+- [Simulateur de rentabilité locative](https://kadrix-fr.fr/#simulateur) : gratuit, sans inscription. Calcule le
+  cash-flow réel, le rendement net, le ratio HCSF et le gain estimé à la revente à partir de cinq
+  informations. Intègre la vacance locative, les provisions pour gros travaux et les frais de revente.
+- [Kit Investisseur Locatif](https://kadrix-fr.fr/#kit) : fichier Excel de dix onglets. Score du Deal sur cinq
+  critères, projection fiscale sur dix ans, comparatif des régimes (LMNP au réel, micro-BIC, SCI à l'IR,
+  SCI à l'IS), risque DPE, stress test de taux, TRI et plus-value comparée.
+- [Analyse sur mesure](https://kadrix-fr.fr/#analyse) : analyse personnalisée d'un bien, rapport PDF sous 48 heures.
+
+## Articles
+
+- [Encadrement des loyers à Paris : l'erreur qui fausse tout calcul de rentabilité](https://kadrix-fr.fr/blog/encadrement-loyers-paris-rentabilite/) :
+  le loyer parisien est plafonné par le loyer de référence majoré, fixé par arrêté préfectoral selon le
+  quartier, le nombre de pièces, l'époque de construction et le type de location. Le montant investi en
+  travaux ne modifie pas ce plafond. Cas chiffré sur un 2 pièces de 36,7 m² dans le 15e arrondissement.
+
+## Méthode de calcul
+
+- Frais de notaire : 8 % du prix dans l'ancien, 2,5 % dans le neuf (VEFA).
+- Rendement brut publié sur deux bases : le prix d'achat seul (base des annonces) et le coût total
+  incluant notaire et travaux.
+- Vacance locative : 5 % des loyers par défaut. Provision pour gros travaux : 5 % des loyers.
+- Ratio HCSF : (mensualité du projet + crédits en cours) ÷ (revenus nets avant impôt + 70 % des loyers
+  prévisionnels). Plafond réglementaire de 35 %.
+- Calendrier DPE (loi Climat et Résilience) : classe G interdite à la location depuis 2025, classe F
+  en 2028, classe E en 2034.
+
+## Pages légales
+
+- [Mentions légales](https://kadrix-fr.fr/#mentions)
+- [Conditions générales de vente](https://kadrix-fr.fr/#cgv)
+- [Politique de confidentialité](https://kadrix-fr.fr/#confidentialite)
