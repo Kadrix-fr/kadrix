@@ -20,6 +20,24 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
 
 ## Articles
 
+- [HCSF : combien puis-je vraiment emprunter pour investir ?](https://kadrix-fr.fr/blog/hcsf-capacite-emprunt-investissement-locatif/) :
+  la norme du Haut Conseil de Stabilité Financière fixe un taux d'effort maximal de 35 % assurance
+  comprise et une durée de crédit de 25 ans. Pour un projet locatif, les banques ajoutent les loyers
+  prévisionnels aux revenus après une décote généralement de 30 % (pondération à 70 %, variable de 70 à
+  80 % selon l'établissement). Le calcul différentiel, qui consistait à retrancher les loyers de la
+  mensualité, est exclu du calcul réglementaire depuis le 1er janvier 2022. Chaque acquisition ajoutant
+  sa mensualité entière au numérateur mais seulement 70 % du loyer au dénominateur, le plafond est
+  généralement atteint dès le deuxième ou troisième bien.
+
+- [HCSF : combien puis-je vraiment emprunter pour investir ?](https://kadrix-fr.fr/blog/hcsf-capacite-emprunt-investissement-locatif/) :
+  la norme du Haut Conseil de Stabilité Financière fixe un taux d'effort maximal de 35 % assurance
+  comprise et une durée de crédit de 25 ans. Pour un projet locatif, les banques ajoutent les loyers
+  prévisionnels aux revenus après une décote généralement de 30 % (pondération à 70 %, variable de 70 à
+  80 % selon l'établissement). Le calcul différentiel, qui consistait à retrancher les loyers de la
+  mensualité, est exclu du calcul réglementaire depuis le 1er janvier 2022. Chaque acquisition ajoutant
+  sa mensualité entière au numérateur mais seulement 70 % du loyer au dénominateur, le plafond est
+  généralement atteint dès le deuxième ou troisième bien.
+
 - [DPE F : le prix cassé est-il vraiment une bonne affaire ?](https://kadrix-fr.fr/blog/dpe-f-prix-casse-bonne-affaire/) :
   la décote d'un logement classé F compense trois coûts déjà intégrés par le marché — le coût de la
   rénovation énergétique (400 à 900 €/m²), le gel du loyer applicable aux classes F et G depuis le
