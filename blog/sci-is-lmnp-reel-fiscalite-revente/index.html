@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SCI à l'IS vs LMNP réel : le calcul à la revente</title>
+<meta name="description" content="Depuis 2025, le LMNP réintègre l'amortissement comme la SCI. Un mécanisme protège encore le nom propre, jamais la SCI — l'écart grandit avec le temps.">
+<link rel="canonical" href="https://kadrix-fr.fr/blog/sci-is-lmnp-reel-fiscalite-revente/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SCI à l'IS vs LMNP réel : le calcul à la revente">
+<meta property="og:description" content="Depuis 2025, le LMNP réintègre l'amortissement comme la SCI. Un mécanisme protège encore le nom propre, jamais la SCI — l'écart grandit avec le temps.">
+<meta property="og:url" content="https://kadrix-fr.fr/blog/sci-is-lmnp-reel-fiscalite-revente/">
+<meta property="og:image" content="https://kadrix-fr.fr/logo-kadrix-512.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://kadrix-fr.fr/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1B2E; --navy-2:#122540; --navy-3:#1A3356;
+    --gold:#C9A227; --gold-soft:#E3C766; --cream:#F5F1E6;
+    --green:#7BD8A4; --amber:#F0B562; --red:#EE8D7B;
+    --line:rgba(201,162,39,.28); --muted:rgba(245,241,230,.72); --faint:rgba(245,241,230,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'IBM Plex Sans',sans-serif;background:var(--navy);color:var(--cream);
+       -webkit-font-smoothing:antialiased;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  a{color:var(--gold-soft)}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.14em;
+        text-transform:uppercase;color:var(--gold-soft)}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(13,27,46,.94);
+             backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;
+          justify-content:space-between;align-items:center;gap:16px}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:var(--cream);text-decoration:none}
+  .logo span{color:var(--gold)}
+  .nav-cta{font-size:.86rem;padding:9px 16px;border-radius:8px;background:var(--gold);
+           color:var(--navy);text-decoration:none;font-weight:600;white-space:nowrap}
+  article{padding:44px 0 20px}
+  .kicker{display:block;margin-bottom:14px}
+  article h1{font-size:clamp(1.9rem,5.2vw,2.7rem);margin-bottom:18px}
+  .meta{font-size:.82rem;color:var(--faint);margin-bottom:30px;
+        padding-bottom:20px;border-bottom:1px solid var(--line)}
+  .lede{font-size:1.12rem;color:var(--cream);margin-bottom:26px}
+  article h2{font-size:1.42rem;margin:38px 0 14px;color:var(--gold-soft)}
+  article h3{font-size:1.12rem;margin:26px 0 10px}
+  article p{margin-bottom:16px;color:var(--muted)}
+  article ul,article ol{margin:0 0 18px 22px;color:var(--muted)}
+  article li{margin-bottom:8px}
+  article strong{color:var(--cream);font-weight:600}
+  .answer{background:var(--navy-2);border-left:3px solid var(--gold);
+          padding:20px 22px;border-radius:0 10px 10px 0;margin:0 0 30px}
+  .answer p{margin:0;color:var(--cream)}
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.9rem}
+  th,td{padding:11px 10px;text-align:left;border-bottom:1px solid rgba(245,241,230,.12)}
+  th{color:var(--gold-soft);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+  td:not(:first-child),th:not(:first-child){text-align:right;font-family:'IBM Plex Mono',monospace}
+  .cta-box{background:var(--navy-2);border:1px solid var(--line);border-radius:12px;
+           padding:26px;margin:36px 0;text-align:center}
+  .cta-box h3{margin-bottom:8px;color:var(--cream)}
+  .cta-box p{color:var(--muted);font-size:.94rem;margin-bottom:18px}
+  .btn{display:inline-block;padding:13px 26px;border-radius:9px;background:var(--gold);
+       color:var(--navy);text-decoration:none;font-weight:600}
+  .faq{margin-top:14px}
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+  .faq summary{cursor:pointer;font-weight:600;color:var(--cream);list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';float:right;color:var(--gold)}
+  .faq details[open] summary::after{content:'−'}
+  .faq div{margin-top:10px;color:var(--muted);font-size:.94rem}
+  .related{margin:40px 0 0;padding-top:26px;border-top:1px solid var(--line)}
+  .related a{display:block;padding:12px 0;text-decoration:none;color:var(--cream);
+             border-bottom:1px solid rgba(245,241,230,.1)}
+  .related a span{display:block;font-size:.8rem;color:var(--faint);margin-top:3px}
+  .disclaimer{margin:34px 0 0;font-size:.8rem;color:var(--faint);font-style:italic}
+  footer{margin-top:50px;padding:28px 0 40px;border-top:1px solid var(--line);
+         font-size:.82rem;color:var(--faint);text-align:center}
+  footer a{color:var(--muted);text-decoration:none;margin:0 9px}
+  .card{display:block;background:var(--navy-2);border:1px solid var(--line);border-radius:12px;
+        padding:22px;margin-bottom:16px;text-decoration:none;transition:border-color .2s}
+  .card:hover{border-color:var(--gold)}
+  .card h2{font-size:1.2rem;margin:6px 0 8px;color:var(--cream)}
+  .card p{color:var(--muted);font-size:.93rem;margin:0}
+  @media(max-width:600px){ .nav-cta{font-size:.8rem;padding:8px 12px} }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "SCI à l'IS ou LMNP au réel : pourquoi la comparaison bascule à la revente", "description": "Depuis 2025, le LMNP réintègre l'amortissement comme la SCI. Un mécanisme protège encore le nom propre, jamais la SCI — l'écart grandit avec le temps.", "datePublished": "2026-08-10", "dateModified": "2026-08-10", "inLanguage": "fr-FR", "author": {"@type": "Organization", "name": "Kadrix", "url": "https://kadrix-fr.fr"}, "publisher": {"@type": "Organization", "name": "Kadrix", "url": "https://kadrix-fr.fr", "logo": {"@type": "ImageObject", "url": "https://kadrix-fr.fr/logo-kadrix-512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kadrix-fr.fr/blog/sci-is-lmnp-reel-fiscalite-revente/"}, "about": [{"@type": "Thing", "name": "SCI à l'IS"}, {"@type": "Thing", "name": "LMNP"}, {"@type": "Thing", "name": "Plus-value immobilière"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Le LMNP au réel est-il toujours avantageux après la réforme de 2025 ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, pendant la détention : l'amortissement continue d'effacer une grande partie de l'impôt sur les loyers, exactement comme avant. Ce qui a changé, c'est le calcul à la sortie : les amortissements déduits sont désormais réintégrés dans la plus-value imposable, comme c'était déjà le cas pour les loueurs professionnels et pour les sociétés à l'IS. L'avantage du LMNP n'a pas disparu, il s'est simplement rapproché de celui des autres régimes sur ce point précis."}}, {"@type": "Question", "name": "Qu'est-ce que la réintégration des amortissements en LMNP ?", "acceptedAnswer": {"@type": "Answer", "text": "Depuis l'article 84 de la loi de finances pour 2025, applicable aux cessions réalisées à compter du 15 février 2025, les amortissements pratiqués en LMNP au réel viennent diminuer le prix d'acquisition retenu pour calculer la plus-value. Concrètement, un bien acheté 200 000 € et amorti à hauteur de 60 000 € est désormais traité, à la revente, comme s'il avait été acquis 140 000 €. La réforme s'applique même aux amortissements pratiqués avant 2025, sur toute cession postérieure au 15 février 2025."}}, {"@type": "Question", "name": "La SCI à l'IS a-t-elle aussi été touchée par cette réforme ?", "acceptedAnswer": {"@type": "Answer", "text": "Non, et c'est le point le plus mal compris du sujet. Une SCI à l'IS a toujours calculé sa plus-value sur la valeur nette comptable du bien, c'est-à-dire après déduction des amortissements pratiqués — c'est la règle normale de la fiscalité des sociétés, en vigueur bien avant 2025. La réforme ne change donc rien pour la SCI : elle aligne simplement le LMNP sur un mécanisme que les sociétés appliquaient déjà."}}, {"@type": "Question", "name": "Qu'est-ce que l'abattement pour durée de détention, et s'applique-t-il à la SCI à l'IS ?", "acceptedAnswer": {"@type": "Answer", "text": "C'est un mécanisme qui réduit progressivement la plus-value imposable selon le nombre d'années de détention : 6 % par an à l'impôt sur le revenu de la 6e à la 21e année, puis 4 % la 22e année, pour une exonération totale d'impôt sur le revenu à 22 ans. Côté prélèvements sociaux, l'abattement est de 1,65 % par an de la 6e à la 21e année, 1,60 % la 22e, puis 9 % par an jusqu'à la 30e année pour une exonération totale. Ce mécanisme relève du régime des plus-values immobilières des particuliers (article 150 VC du Code général des impôts) : il s'applique en nom propre, y compris en LMNP, mais jamais à une société soumise à l'impôt sur les sociétés. Une SCI à l'IS reste imposée sur l'intégralité de sa plus-value quelle que soit la durée de détention."}}, {"@type": "Question", "name": "Pourquoi l'écart se creuse-t-il avec le temps en faveur du nom propre ?", "acceptedAnswer": {"@type": "Answer", "text": "Parce que l'abattement pour durée de détention est un pourcentage appliqué à la plus-value : plus le bien s'est revalorisé, plus la plus-value brute est élevée, et plus l'abattement protège un montant absolu important. La SCI à l'IS n'a pas cet effet protecteur — elle est taxée sur l'intégralité de sa plus-value quelle que soit sa taille. Résultat : sur une détention longue avec une revalorisation significative, le nom propre au réel peut voir son imposition à la sortie tomber à moins de 30 % de la plus-value brute, quand la SCI reste taxée à plus de 45 % si le cash est ensuite distribué."}}, {"@type": "Question", "name": "Faut-il éviter la SCI à l'IS pour investir dans le locatif ?", "acceptedAnswer": {"@type": "Answer", "text": "Non — la SCI à l'IS garde un vrai avantage pendant la détention (15 % puis 25 % d'impôt sur le résultat locatif, contre la tranche marginale de l'associé plus 17,2 % en nom propre), et cet avantage compte d'autant plus que la tranche d'imposition personnelle est élevée. Elle est aussi pertinente si le cash n'est jamais distribué mais réinvesti dans la société. Le calcul à faire dépend de trois éléments : la tranche d'imposition, l'horizon de détention envisagé, et l'intention ou non de distribuer le cash à la sortie."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://kadrix-fr.fr"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kadrix-fr.fr/blog/"}, {"@type": "ListItem", "position": 3, "name": "SCI à l'IS ou LMNP au réel : pourquoi la comparaison bascule à la revente", "item": "https://kadrix-fr.fr/blog/sci-is-lmnp-reel-fiscalite-revente/"}]}]}</script>
+</head>
+<body>
+<header class="nav"><div class="nav-in">
+  <a class="logo" href="https://kadrix-fr.fr/">Kadrix<span>.</span></a>
+  <a class="nav-cta" href="https://kadrix-fr.fr/#simulateur">Simulateur gratuit</a>
+</div></header>
+<div class="wrap">
+<article>
+  <span class="mono kicker">Décryptage fiscal</span>
+  <h1>SCI à l'IS ou LMNP au réel : pourquoi la comparaison bascule à la revente</h1>
+  <div class="meta">Publié le 10 août 2026 · Lecture 9 min</div>
 
+  <div class="answer">
+    <p><strong>En résumé :</strong> depuis la réforme entrée en vigueur le 15 février 2025, l'amortissement
+    déduit en LMNP au réel est réintégré dans la plus-value à la revente — exactement comme il l'a toujours
+    été en SCI à l'IS. Ce qui distingue encore les deux régimes, c'est l'abattement pour durée de détention :
+    un mécanisme réservé au nom propre, qui n'existe pas pour une société à l'IS, et qui protège une part
+    croissante de la plus-value à mesure que le bien se revalorise. Plus la détention est longue et la
+    revalorisation forte, plus l'écart se creuse — en faveur du nom propre, si le cash est distribué.</p>
+  </div>
+
+  <p class="lede">« La SCI à l'IS, c'est toujours mieux pour optimiser ses impôts. » C'est l'idée reçue la
+  plus répandue en investissement locatif, et elle a longtemps eu une part de vérité — jusqu'à ce qu'une
+  réforme fiscale entrée en vigueur en 2025 rebatte une partie des cartes à la revente. Voici ce qui a
+  changé, ce qui n'a pas bougé, et pourquoi l'écart entre les deux régimes dépend surtout du temps.</p>
+
+  <h2>Ce que l'idée reçue oubliait déjà avant 2025</h2>
+  <p>Pendant la détention, la comparaison semble simple : une SCI à l'IS paie 15 % d'impôt sur son
+  résultat jusqu'à 42 500 €, puis 25 % au-delà. En nom propre, le même résultat est taxé à la tranche
+  marginale de l'associé, majorée de 17,2 % de prélèvements sociaux. Pour quelqu'un imposé à 30 % ou
+  41 %, l'écart semble jouer nettement en faveur de la société.</p>
+  <p>Mais cette lecture s'arrête à la phase de location. Ce qui se passe à la revente n'a jamais été
+  identique entre les deux régimes — et depuis 2025, la différence s'est encore précisée.</p>
+
+  <h2>Ce qui a changé le 15 février 2025</h2>
+  <p>L'article 84 de la loi de finances pour 2025 a mis fin à une asymétrie qui existait depuis toujours
+  en LMNP au réel. Avant cette date, les amortissements déduits pendant la location n'avaient aucune
+  incidence sur le calcul de la plus-value à la revente : celle-ci se calculait sur le prix d'achat
+  d'origine, comme si le bien n'avait jamais été amorti. Un double avantage, donc — un impôt réduit
+  pendant la détention, et une plus-value calculée sans tenir compte de cette réduction.</p>
+  <p>Depuis le 15 février 2025, les amortissements pratiqués viennent diminuer le prix d'acquisition
+  retenu pour le calcul de la plus-value — et ce, y compris pour les amortissements déduits avant cette
+  date, sur toute cession réalisée après. L'administration a confirmé cette portée rétroactive en réponse
+  à une question parlementaire : la réforme s'applique quelle que soit la date de mise en location du
+  bien.</p>
+
+  <h2>Ce qui n'a pas changé côté SCI à l'IS</h2>
+  <p>C'est le point le plus souvent mal compris : <strong>la SCI à l'IS n'a pas été touchée par cette
+  réforme</strong>, parce qu'elle n'en avait pas besoin. Une société soumise à l'impôt sur les sociétés a
+  toujours calculé sa plus-value sur la valeur nette comptable du bien — c'est-à-dire le prix d'acquisition
+  diminué des amortissements déjà pratiqués. C'est la règle ordinaire de la comptabilité des sociétés,
+  la même qui s'applique aux loueurs professionnels depuis longtemps.</p>
+  <p>La réforme de 2025 n'a donc pas créé un nouveau désavantage pour la SCI. Elle a simplement aligné le
+  LMNP sur un mécanisme que les sociétés appliquaient déjà. Ce qui reste à comparer, ce n'est plus « qui
+  réintègre l'amortissement » — les deux le font désormais — mais ce qui se passe une fois cette
+  réintégration effectuée.</p>
+
+  <h2>Le bouclier que seul le nom propre conserve</h2>
+  <p>C'est là que la différence structurelle subsiste, et elle n'a rien à voir avec la réforme de 2025 :
+  l'<strong>abattement pour durée de détention</strong>, prévu par le régime des plus-values immobilières
+  des particuliers (article 150 VC du CGI).</p>
+  <table>
+    <tr><th>Durée de détention</th><th>Abattement IR</th><th>Abattement PS</th></tr>
+    <tr><td>Moins de 6 ans</td><td>0 %</td><td>0 %</td></tr>
+    <tr><td>De la 6<sup>e</sup> à la 21<sup>e</sup> année</td><td>6 %/an</td><td>1,65 %/an</td></tr>
+    <tr><td>22<sup>e</sup> année</td><td>4 % (→ 100 %)</td><td>1,60 %</td></tr>
+    <tr><td>23<sup>e</sup> à 30<sup>e</sup> année</td><td>—</td><td>9 %/an (→ 100 %)</td></tr>
+  </table>
+  <p>Exonération totale d'impôt sur le revenu à 22 ans de détention, exonération totale de prélèvements
+  sociaux à 30 ans. Ce mécanisme s'applique au nom propre — y compris en LMNP au réel, malgré la
+  réintégration désormais en vigueur. Il ne s'applique <strong>jamais</strong> à une société à l'IS, qui
+  reste taxée sur l'intégralité de sa plus-value quelle que soit la durée de détention.</p>
+
+  <h2>Un calcul chiffré, à deux horizons</h2>
+  <p>Prenons un bien acheté 200 000 €, amortissable sur sa base hors terrain à 6 800 €/an. Hypothèses :
+  IS à 25 % sur la plus-value (société déjà au-delà du seuil de la tranche réduite), flat tax de 30 % en
+  cas de distribution du cash, IR sur plus-value à 19 %, prélèvements sociaux à 17,2 %.</p>
+
+  <h3>À 10 ans de détention, revente à 260 000 €</h3>
+  <p>Amortissement cumulé : 68 000 €. Plus-value brute réintégrée (identique dans les deux régimes) :
+  128 000 €.</p>
+  <table>
+    <tr><th>Régime</th><th>Impôt total</th><th>Net en poche</th></tr>
+    <tr><td>Nom propre — LMNP réel</td><td>37 224 €</td><td>90 776 €</td></tr>
+    <tr><td>SCI à l'IS, cash distribué</td><td>60 800 €</td><td>67 200 €</td></tr>
+  </table>
+  <p>Écart en faveur du nom propre : <strong>+23 576 €</strong>.</p>
+
+  <h3>À 22 ans de détention, revente à 310 000 €</h3>
+  <p>Amortissement cumulé : 149 600 €. Plus-value brute réintégrée : 259 600 €.</p>
+  <table>
+    <tr><th>Régime</th><th>Impôt total</th><th>Net en poche</th></tr>
+    <tr><td>Nom propre — LMNP réel</td><td>32 149 €</td><td>227 451 €</td></tr>
+    <tr><td>SCI à l'IS, cash distribué</td><td>123 310 €</td><td>136 290 €</td></tr>
+  </table>
+  <p>Écart en faveur du nom propre : <strong>+91 161 €</strong>. L'écart n'a pas seulement augmenté, il a
+  presque quadruplé — alors que la plus-value brute, elle, n'a même pas doublé.</p>
+
+  <p>C'est le mécanisme au cœur du sujet : l'abattement du nom propre progresse avec la durée
+  <em>et</em> s'applique à une base qui grossit avec la revalorisation. La SCI, elle, reste taxée à taux
+  plein sur cette même base croissante, sans aucune protection équivalente. Plus la détention est longue
+  et le marché favorable, plus l'écart se creuse — dans le sens inverse de ce que l'idée reçue affirme.</p>
+
+  <div class="cta-box">
+    <h3>Comparez les deux régimes sur votre projet</h3>
+    <p>Le Kit Kadrix chiffre le nom propre, le micro-BIC et la SCI à l'IS sur trois horizons — l'année 1,
+    dix ans de détention, et la revente. Selon votre situation, pas selon une idée reçue.</p>
+    <a class="btn" href="https://kadrix-fr.fr/#kit">Découvrir le Kit</a>
+  </div>
+
+  <h2>Et si le cash n'est jamais distribué ?</h2>
+  <p>Tout ce calcul suppose que le cash sorti de la société est distribué à l'associé, donc soumis à la
+  flat tax de 30 %. Si la SCI conserve sa trésorerie pour la réinvestir dans une nouvelle acquisition sans
+  jamais distribuer, ce second niveau de taxation ne s'applique pas — et l'écart avec le nom propre se
+  réduit fortement, voire s'inverse selon la tranche d'imposition personnelle. La bonne question n'est
+  donc pas seulement « quel régime choisir », mais « qu'est-ce que je compte faire du cash à la sortie » :
+  vivre de mes loyers et de ma plus-value, ou faire tourner le capital en boucle. Deux stratégies, deux
+  arbitrages différents.</p>
+
+  <h2>Ce qu'il faut retenir</h2>
+  <ul>
+    <li>Depuis 2025, LMNP au réel et SCI à l'IS réintègrent tous les deux l'amortissement dans la
+    plus-value — ce n'est plus un point de différence.</li>
+    <li>Le vrai écart structurel est l'abattement pour durée de détention, réservé au nom propre.</li>
+    <li>Cet écart grandit avec le temps et avec la revalorisation du bien — pas l'inverse.</li>
+    <li>Si le cash est distribué, le nom propre reprend souvent l'avantage sur une détention longue.
+    S'il reste dans la société pour être réinvesti, le calcul change.</li>
+  </ul>
+
+  <h2>Questions fréquentes</h2>
+  <div class="faq">
+      <details><summary>Le LMNP au réel est-il toujours avantageux après la réforme de 2025 ?</summary><div>Oui, pendant la détention : l&#x27;amortissement continue d&#x27;effacer une grande partie de l&#x27;impôt sur les loyers, exactement comme avant. Ce qui a changé, c&#x27;est le calcul à la sortie : les amortissements déduits sont désormais réintégrés dans la plus-value imposable, comme c&#x27;était déjà le cas pour les loueurs professionnels et pour les sociétés à l&#x27;IS. L&#x27;avantage du LMNP n&#x27;a pas disparu, il s&#x27;est simplement rapproché de celui des autres régimes sur ce point précis.</div></details>
+      <details><summary>Qu&#x27;est-ce que la réintégration des amortissements en LMNP ?</summary><div>Depuis l&#x27;article 84 de la loi de finances pour 2025, applicable aux cessions réalisées à compter du 15 février 2025, les amortissements pratiqués en LMNP au réel viennent diminuer le prix d&#x27;acquisition retenu pour calculer la plus-value. Concrètement, un bien acheté 200 000 € et amorti à hauteur de 60 000 € est désormais traité, à la revente, comme s&#x27;il avait été acquis 140 000 €. La réforme s&#x27;applique même aux amortissements pratiqués avant 2025, sur toute cession postérieure au 15 février 2025.</div></details>
+      <details><summary>La SCI à l&#x27;IS a-t-elle aussi été touchée par cette réforme ?</summary><div>Non, et c&#x27;est le point le plus mal compris du sujet. Une SCI à l&#x27;IS a toujours calculé sa plus-value sur la valeur nette comptable du bien, c&#x27;est-à-dire après déduction des amortissements pratiqués — c&#x27;est la règle normale de la fiscalité des sociétés, en vigueur bien avant 2025. La réforme ne change donc rien pour la SCI : elle aligne simplement le LMNP sur un mécanisme que les sociétés appliquaient déjà.</div></details>
+      <details><summary>Qu&#x27;est-ce que l&#x27;abattement pour durée de détention, et s&#x27;applique-t-il à la SCI à l&#x27;IS ?</summary><div>C&#x27;est un mécanisme qui réduit progressivement la plus-value imposable selon le nombre d&#x27;années de détention : 6 % par an à l&#x27;impôt sur le revenu de la 6e à la 21e année, puis 4 % la 22e année, pour une exonération totale d&#x27;impôt sur le revenu à 22 ans. Côté prélèvements sociaux, l&#x27;abattement est de 1,65 % par an de la 6e à la 21e année, 1,60 % la 22e, puis 9 % par an jusqu&#x27;à la 30e année pour une exonération totale. Ce mécanisme relève du régime des plus-values immobilières des particuliers (article 150 VC du Code général des impôts) : il s&#x27;applique en nom propre, y compris en LMNP, mais jamais à une société soumise à l&#x27;impôt sur les sociétés. Une SCI à l&#x27;IS reste imposée sur l&#x27;intégralité de sa plus-value quelle que soit la durée de détention.</div></details>
+      <details><summary>Pourquoi l&#x27;écart se creuse-t-il avec le temps en faveur du nom propre ?</summary><div>Parce que l&#x27;abattement pour durée de détention est un pourcentage appliqué à la plus-value : plus le bien s&#x27;est revalorisé, plus la plus-value brute est élevée, et plus l&#x27;abattement protège un montant absolu important. La SCI à l&#x27;IS n&#x27;a pas cet effet protecteur — elle est taxée sur l&#x27;intégralité de sa plus-value quelle que soit sa taille. Résultat : sur une détention longue avec une revalorisation significative, le nom propre au réel peut voir son imposition à la sortie tomber à moins de 30 % de la plus-value brute, quand la SCI reste taxée à plus de 45 % si le cash est ensuite distribué.</div></details>
+      <details><summary>Faut-il éviter la SCI à l&#x27;IS pour investir dans le locatif ?</summary><div>Non — la SCI à l&#x27;IS garde un vrai avantage pendant la détention (15 % puis 25 % d&#x27;impôt sur le résultat locatif, contre la tranche marginale de l&#x27;associé plus 17,2 % en nom propre), et cet avantage compte d&#x27;autant plus que la tranche d&#x27;imposition personnelle est élevée. Elle est aussi pertinente si le cash n&#x27;est jamais distribué mais réinvesti dans la société. Le calcul à faire dépend de trois éléments : la tranche d&#x27;imposition, l&#x27;horizon de détention envisagé, et l&#x27;intention ou non de distribuer le cash à la sortie.</div></details>
+  </div>
+
+  <div class="related">
+    <span class="mono">À lire ensuite</span>
+    <a href="https://kadrix-fr.fr/blog/hcsf-capacite-emprunt-investissement-locatif/">HCSF : combien puis-je vraiment emprunter pour investir&nbsp;?
+      <span>Pourquoi le mur arrive dès le deuxième bien</span></a>
+    <a href="https://kadrix-fr.fr/blog/dpe-f-prix-casse-bonne-affaire/">DPE F : le prix cassé est-il vraiment une bonne affaire&nbsp;?
+      <span>La décote compense trois coûts déjà connus du marché</span></a>
+    <a href="https://kadrix-fr.fr/blog/encadrement-loyers-paris-rentabilite/">Encadrement des loyers à Paris : l'erreur qui fausse tout calcul
+      <span>Le plafond légal que les travaux ne permettent pas de dépasser</span></a>
+  </div>
+
+  <p class="disclaimer">Article pédagogique fondé sur l'article 84 de la loi de finances pour 2025 et sur
+  le régime des plus-values immobilières des particuliers (article 150 VC du CGI) en vigueur en 2026.
+  Le calcul chiffré repose sur des hypothèses simplifiées (taux d'IS constant, absence de déficit
+  reportable, pas de prise en compte des frais de cession) et ne remplace pas une simulation sur votre
+  situation réelle. Ce contenu ne constitue ni un conseil en investissement, ni un conseil fiscal.</p>
+</article>
+<footer>
+  <a href="https://kadrix-fr.fr/">Accueil</a><a href="https://kadrix-fr.fr/blog/">Blog</a>
+  <a href="https://kadrix-fr.fr/#simulateur">Simulateur</a><a href="https://kadrix-fr.fr/#kit">Le Kit</a>
+  <a href="https://kadrix-fr.fr/#mentions">Mentions légales</a>
+  <p style="margin-top:16px">Kadrix — outil pédagogique d'analyse d'investissement locatif.</p>
+</footer>
+</div>
+</body>
+</html>
