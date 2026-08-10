@@ -20,42 +20,20 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
 
 ## Articles
 
-- [HCSF : combien puis-je vraiment emprunter pour investir ?](https://kadrix-fr.fr/blog/hcsf-capacite-emprunt-investissement-locatif/) :
-  la norme du Haut Conseil de Stabilité Financière fixe un taux d'effort maximal de 35 % assurance
-  comprise et une durée de crédit de 25 ans. Pour un projet locatif, les banques ajoutent les loyers
-  prévisionnels aux revenus après une décote généralement de 30 % (pondération à 70 %, variable de 70 à
-  80 % selon l'établissement). Le calcul différentiel, qui consistait à retrancher les loyers de la
-  mensualité, est exclu du calcul réglementaire depuis le 1er janvier 2022. Chaque acquisition ajoutant
-  sa mensualité entière au numérateur mais seulement 70 % du loyer au dénominateur, le plafond est
-  généralement atteint dès le deuxième ou troisième bien.
-
-- [HCSF : combien puis-je vraiment emprunter pour investir ?](https://kadrix-fr.fr/blog/hcsf-capacite-emprunt-investissement-locatif/) :
-  la norme du Haut Conseil de Stabilité Financière fixe un taux d'effort maximal de 35 % assurance
-  comprise et une durée de crédit de 25 ans. Pour un projet locatif, les banques ajoutent les loyers
-  prévisionnels aux revenus après une décote généralement de 30 % (pondération à 70 %, variable de 70 à
-  80 % selon l'établissement). Le calcul différentiel, qui consistait à retrancher les loyers de la
-  mensualité, est exclu du calcul réglementaire depuis le 1er janvier 2022. Chaque acquisition ajoutant
-  sa mensualité entière au numérateur mais seulement 70 % du loyer au dénominateur, le plafond est
-  généralement atteint dès le deuxième ou troisième bien.
-
-- [DPE F : le prix cassé est-il vraiment une bonne affaire ?](https://kadrix-fr.fr/blog/dpe-f-prix-casse-bonne-affaire/) :
-  la décote d'un logement classé F compense trois coûts déjà intégrés par le marché — le coût de la
-  rénovation énergétique (400 à 900 €/m²), le gel du loyer applicable aux classes F et G depuis le
-  24 août 2022, et l'interdiction de louer au 1er janvier 2028. Cas chiffré sur un appartement de
-  175 m² en centre historique de Dijon. Traite aussi des contraintes de l'Architecte des Bâtiments de
-  France en secteur patrimonial.
-
-- [DPE F : le prix cassé est-il vraiment une bonne affaire ?](https://kadrix-fr.fr/blog/dpe-f-prix-casse-bonne-affaire/) :
-  la décote d'un logement classé F compense trois coûts déjà intégrés par le marché — le coût de la
-  rénovation énergétique (400 à 900 €/m²), le gel du loyer applicable aux classes F et G depuis le
-  24 août 2022, et l'interdiction de louer au 1er janvier 2028. Cas chiffré sur un appartement de
-  175 m² en centre historique de Dijon. Traite aussi des contraintes de l'Architecte des Bâtiments de
-  France en secteur patrimonial.
-
+- [SCI à l'IS ou LMNP au réel : pourquoi la comparaison bascule à la revente](https://kadrix-fr.fr/blog/sci-is-lmnp-reel-fiscalite-revente/) : depuis la loi de
+  finances 2025, l'amortissement LMNP est réintégré dans la plus-value à la revente, comme c'est le cas
+  en SCI à l'IS depuis toujours. Ce qui distingue encore les deux régimes : l'abattement pour durée de
+  détention, réservé au nom propre (exonération IR à 22 ans, PS à 30 ans), qui protège une part
+  croissante de la plus-value à mesure que le bien se revalorise — un écart qui se creuse avec le temps.
+- [HCSF : combien puis-je vraiment emprunter pour investir ?](https://kadrix-fr.fr/blog/hcsf-capacite-emprunt-investissement-locatif/) : le taux d'effort
+  maximal de 35 % et la pondération des loyers futurs à 70 % expliquent pourquoi la capacité d'emprunt
+  se bloque généralement dès le deuxième bien locatif.
+- [DPE F : le prix cassé est-il vraiment une bonne affaire ?](https://kadrix-fr.fr/blog/dpe-f-prix-casse-bonne-affaire/) : la décote d'un
+  logement classé F compense trois coûts déjà intégrés par le marché — rénovation énergétique, gel du
+  loyer depuis 2022, interdiction de louer au 1er janvier 2028.
 - [Encadrement des loyers à Paris : l'erreur qui fausse tout calcul de rentabilité](https://kadrix-fr.fr/blog/encadrement-loyers-paris-rentabilite/) :
   le loyer parisien est plafonné par le loyer de référence majoré, fixé par arrêté préfectoral selon le
-  quartier, le nombre de pièces, l'époque de construction et le type de location. Le montant investi en
-  travaux ne modifie pas ce plafond. Cas chiffré sur un 2 pièces de 36,7 m² dans le 15e arrondissement.
+  quartier, le nombre de pièces, l'époque de construction et le type de location.
 
 ## Méthode de calcul
 
@@ -67,6 +45,8 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
   prévisionnels). Plafond réglementaire de 35 %.
 - Calendrier DPE (loi Climat et Résilience) : classe G interdite à la location depuis 2025, classe F
   en 2028, classe E en 2034.
+- Fiscalité de sortie : amortissement réintégré dans la plus-value en LMNP réel (depuis le 15/02/2025)
+  comme en SCI à l'IS. Abattement pour durée de détention applicable au nom propre uniquement.
 
 ## Pages légales
 
