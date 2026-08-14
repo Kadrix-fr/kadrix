@@ -20,11 +20,14 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
 
 ## Articles
 
-- [SCI à l'IS ou LMNP au réel : pourquoi la comparaison bascule à la revente](https://kadrix-fr.fr/blog/sci-is-lmnp-reel-fiscalite-revente/) : depuis la loi de
-  finances 2025, l'amortissement LMNP est réintégré dans la plus-value à la revente, comme c'est le cas
-  en SCI à l'IS depuis toujours. Ce qui distingue encore les deux régimes : l'abattement pour durée de
-  détention, réservé au nom propre (exonération IR à 22 ans, PS à 30 ans), qui protège une part
-  croissante de la plus-value à mesure que le bien se revalorise — un écart qui se creuse avec le temps.
+- [Les documents à demander avant de signer un bien locatif](https://kadrix-fr.fr/blog/documents-a-demander-avant-achat-locatif/) : cinq documents (PV d'AG, DPE
+  opposable, avis de taxe foncière, état daté de copropriété, avis du service urbanisme en secteur
+  protégé) qui protègent un calcul de rentabilité contre les charges cachées, un risque réglementaire
+  mal anticipé ou une approximation optimiste.
+- [SCI à l'IS ou LMNP au réel : pourquoi la comparaison bascule à la revente](https://kadrix-fr.fr/blog/sci-is-lmnp-reel-fiscalite-revente/) :
+  depuis la loi de finances 2025, l'amortissement LMNP est réintégré dans la plus-value à la revente,
+  comme en SCI à l'IS. L'abattement pour durée de détention, réservé au nom propre, fait grandir l'écart
+  avec le temps.
 - [HCSF : combien puis-je vraiment emprunter pour investir ?](https://kadrix-fr.fr/blog/hcsf-capacite-emprunt-investissement-locatif/) : le taux d'effort
   maximal de 35 % et la pondération des loyers futurs à 70 % expliquent pourquoi la capacité d'emprunt
   se bloque généralement dès le deuxième bien locatif.
