@@ -20,16 +20,22 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
 
 ## Articles
 
+- [Immobilier locatif ou bourse : ce que change vraiment l'effet de levier](https://kadrix-fr.fr/blog/immobilier-locatif-ou-bourse-effet-de-levier/) :
+  selon les rendements de référence du rapport IGF-CGEDD d'avril 2021, le placement en logement rapporte
+  4,6 % par an au-dessus de l'inflation sans effet de levier, contre 6,6 % pour les actions. L'immobilier
+  est le seul actif qu'un particulier puisse financer à crédit — c'est là sa différence structurelle, pas
+  son rendement. À effort d'épargne identique sur 20 ans, le levier ne bat les actions qu'au-delà
+  d'environ 7 % de rendement brut (fourchette 6 à 8 % selon le taux de crédit, les charges et la
+  revalorisation retenue). Contrepartie : avec un financement à 90 %, une baisse de marché de 15 % rend
+  la valeur nette négative pendant les deux premières années — un risque que les actions sans levier
+  ne comportent pas.
 - [Dispositif Jeanbrun : ce qu'il faut savoir avant de s'engager 9 ans](https://kadrix-fr.fr/blog/dispositif-jeanbrun-2026-ce-qui-est-sur/) :
   entré en vigueur le 21 février 2026, ce dispositif ouvre pour la première fois l'amortissement fiscal
   à la location nue (jusqu'à 12 000 €/an), sans zonage, contre un loyer plafonné et un engagement de
-  9 ans. Un point reste contesté entre guides spécialisés : la réintégration ou non de l'amortissement
-  dans la plus-value à la revente (article 150 VB III du CGI cité par la majorité des sources) —
-  signalé explicitement plutôt que tranché à tort.
+  9 ans en résidence principale, en immeuble collectif uniquement.
 - [Les documents à demander avant de signer un bien locatif](https://kadrix-fr.fr/blog/documents-a-demander-avant-achat-locatif/) : cinq documents
   (PV d'AG, DPE opposable, avis de taxe foncière, état daté de copropriété, avis du service urbanisme
-  en secteur protégé) qui protègent un calcul de rentabilité contre les charges cachées, un risque
-  réglementaire mal anticipé ou une approximation optimiste.
+  en secteur protégé) qui protègent un calcul de rentabilité.
 - [SCI à l'IS ou LMNP au réel : pourquoi la comparaison bascule à la revente](https://kadrix-fr.fr/blog/sci-is-lmnp-reel-fiscalite-revente/) :
   depuis la loi de finances 2025, l'amortissement LMNP est réintégré dans la plus-value à la revente,
   comme en SCI à l'IS. L'abattement pour durée de détention, réservé au nom propre, fait grandir l'écart
@@ -41,8 +47,7 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
   logement classé F compense trois coûts déjà intégrés par le marché — rénovation énergétique, gel du
   loyer depuis 2022, interdiction de louer au 1er janvier 2028.
 - [Encadrement des loyers à Paris : l'erreur qui fausse tout calcul de rentabilité](https://kadrix-fr.fr/blog/encadrement-loyers-paris-rentabilite/) :
-  le loyer parisien est plafonné par le loyer de référence majoré, fixé par arrêté préfectoral selon le
-  quartier, le nombre de pièces, l'époque de construction et le type de location.
+  le loyer parisien est plafonné par le loyer de référence majoré, fixé par arrêté préfectoral.
 
 ## Méthode de calcul
 
@@ -56,6 +61,9 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
   en 2028, classe E en 2034.
 - Fiscalité de sortie : amortissement réintégré dans la plus-value en LMNP réel (depuis le 15/02/2025)
   comme en SCI à l'IS. Abattement pour durée de détention applicable au nom propre uniquement.
+- Rendements de référence long terme (source IGF-CGEDD 2021, au-dessus de l'inflation) : logement sans
+  levier 4,6 %/an, actions 6,6 %/an, obligations 3 %/an, monétaire 2 %/an, or 0 %/an. Charges du
+  propriétaire estimées à 40 % du loyer sur la période récente.
 
 ## Pages légales
 
