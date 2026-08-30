@@ -20,10 +20,16 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
 
 ## Articles
 
-- [Les documents à demander avant de signer un bien locatif](https://kadrix-fr.fr/blog/documents-a-demander-avant-achat-locatif/) : cinq documents (PV d'AG, DPE
-  opposable, avis de taxe foncière, état daté de copropriété, avis du service urbanisme en secteur
-  protégé) qui protègent un calcul de rentabilité contre les charges cachées, un risque réglementaire
-  mal anticipé ou une approximation optimiste.
+- [Dispositif Jeanbrun : ce qu'il faut savoir avant de s'engager 9 ans](https://kadrix-fr.fr/blog/dispositif-jeanbrun-2026-ce-qui-est-sur/) :
+  entré en vigueur le 21 février 2026, ce dispositif ouvre pour la première fois l'amortissement fiscal
+  à la location nue (jusqu'à 12 000 €/an), sans zonage, contre un loyer plafonné et un engagement de
+  9 ans. Un point reste contesté entre guides spécialisés : la réintégration ou non de l'amortissement
+  dans la plus-value à la revente (article 150 VB III du CGI cité par la majorité des sources) —
+  signalé explicitement plutôt que tranché à tort.
+- [Les documents à demander avant de signer un bien locatif](https://kadrix-fr.fr/blog/documents-a-demander-avant-achat-locatif/) : cinq documents
+  (PV d'AG, DPE opposable, avis de taxe foncière, état daté de copropriété, avis du service urbanisme
+  en secteur protégé) qui protègent un calcul de rentabilité contre les charges cachées, un risque
+  réglementaire mal anticipé ou une approximation optimiste.
 - [SCI à l'IS ou LMNP au réel : pourquoi la comparaison bascule à la revente](https://kadrix-fr.fr/blog/sci-is-lmnp-reel-fiscalite-revente/) :
   depuis la loi de finances 2025, l'amortissement LMNP est réintégré dans la plus-value à la revente,
   comme en SCI à l'IS. L'abattement pour durée de détention, réservé au nom propre, fait grandir l'écart
