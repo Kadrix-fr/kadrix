@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Immobilier locatif ou bourse : le rôle du levier</title>
+<meta name="description" content="Sans levier, les actions rapportent plus que l'immobilier : c'est l'État qui le dit. Le levier inverse le calcul, mais au-delà d'un seuil précis.">
+<link rel="canonical" href="https://kadrix-fr.fr/blog/immobilier-locatif-ou-bourse-effet-de-levier/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Immobilier locatif ou bourse : le rôle du levier">
+<meta property="og:description" content="Sans levier, les actions rapportent plus que l'immobilier : c'est l'État qui le dit. Le levier inverse le calcul, mais au-delà d'un seuil précis.">
+<meta property="og:url" content="https://kadrix-fr.fr/blog/immobilier-locatif-ou-bourse-effet-de-levier/">
+<meta property="og:image" content="https://kadrix-fr.fr/logo-kadrix-512.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://kadrix-fr.fr/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1B2E; --navy-2:#122540; --navy-3:#1A3356;
+    --gold:#C9A227; --gold-soft:#E3C766; --cream:#F5F1E6;
+    --green:#7BD8A4; --amber:#F0B562; --red:#EE8D7B;
+    --line:rgba(201,162,39,.28); --muted:rgba(245,241,230,.72); --faint:rgba(245,241,230,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'IBM Plex Sans',sans-serif;background:var(--navy);color:var(--cream);
+       -webkit-font-smoothing:antialiased;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  a{color:var(--gold-soft)}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.14em;
+        text-transform:uppercase;color:var(--gold-soft)}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(13,27,46,.94);
+             backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;
+          justify-content:space-between;align-items:center;gap:16px}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:var(--cream);text-decoration:none}
+  .logo span{color:var(--gold)}
+  .nav-cta{font-size:.86rem;padding:9px 16px;border-radius:8px;background:var(--gold);
+           color:var(--navy);text-decoration:none;font-weight:600;white-space:nowrap}
+  article{padding:44px 0 20px}
+  .kicker{display:block;margin-bottom:14px}
+  article h1{font-size:clamp(1.9rem,5.2vw,2.7rem);margin-bottom:18px}
+  .meta{font-size:.82rem;color:var(--faint);margin-bottom:30px;
+        padding-bottom:20px;border-bottom:1px solid var(--line)}
+  .lede{font-size:1.12rem;color:var(--cream);margin-bottom:26px}
+  article h2{font-size:1.42rem;margin:38px 0 14px;color:var(--gold-soft)}
+  article h3{font-size:1.12rem;margin:26px 0 10px}
+  article p{margin-bottom:16px;color:var(--muted)}
+  article ul,article ol{margin:0 0 18px 22px;color:var(--muted)}
+  article li{margin-bottom:8px}
+  article strong{color:var(--cream);font-weight:600}
+  .answer{background:var(--navy-2);border-left:3px solid var(--gold);
+          padding:20px 22px;border-radius:0 10px 10px 0;margin:0 0 30px}
+  .answer p{margin:0;color:var(--cream)}
+  .quote{background:var(--navy-2);border-left:3px solid var(--gold-soft);
+         padding:18px 22px;border-radius:0 10px 10px 0;margin:24px 0;font-style:italic}
+  .quote p{margin:0;color:var(--cream)}
+  .quote cite{display:block;margin-top:10px;font-style:normal;font-size:.82rem;color:var(--faint)}
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.9rem}
+  th,td{padding:11px 10px;text-align:left;border-bottom:1px solid rgba(245,241,230,.12)}
+  th{color:var(--gold-soft);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+  td:not(:first-child),th:not(:first-child){text-align:right;font-family:'IBM Plex Mono',monospace}
+  .cta-box{background:var(--navy-2);border:1px solid var(--line);border-radius:12px;
+           padding:26px;margin:36px 0;text-align:center}
+  .cta-box h3{margin-bottom:8px;color:var(--cream)}
+  .cta-box p{color:var(--muted);font-size:.94rem;margin-bottom:18px}
+  .btn{display:inline-block;padding:13px 26px;border-radius:9px;background:var(--gold);
+       color:var(--navy);text-decoration:none;font-weight:600}
+  .faq{margin-top:14px}
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+  .faq summary{cursor:pointer;font-weight:600;color:var(--cream);list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';float:right;color:var(--gold)}
+  .faq details[open] summary::after{content:'−'}
+  .faq div{margin-top:10px;color:var(--muted);font-size:.94rem}
+  .related{margin:40px 0 0;padding-top:26px;border-top:1px solid var(--line)}
+  .related a{display:block;padding:12px 0;text-decoration:none;color:var(--cream);
+             border-bottom:1px solid rgba(245,241,230,.1)}
+  .related a span{display:block;font-size:.8rem;color:var(--faint);margin-top:3px}
+  .disclaimer{margin:34px 0 0;font-size:.8rem;color:var(--faint);font-style:italic}
+  footer{margin-top:50px;padding:28px 0 40px;border-top:1px solid var(--line);
+         font-size:.82rem;color:var(--faint);text-align:center}
+  footer a{color:var(--muted);text-decoration:none;margin:0 9px}
+  .card{display:block;background:var(--navy-2);border:1px solid var(--line);border-radius:12px;
+        padding:22px;margin-bottom:16px;text-decoration:none;transition:border-color .2s}
+  .card:hover{border-color:var(--gold)}
+  .card h2{font-size:1.2rem;margin:6px 0 8px;color:var(--cream)}
+  .card p{color:var(--muted);font-size:.93rem;margin:0}
+  @media(max-width:600px){ .nav-cta{font-size:.8rem;padding:8px 12px} }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Immobilier locatif ou bourse : ce que change vraiment l'effet de levier", "description": "Sans levier, les actions rapportent plus que l'immobilier : c'est l'État qui le dit. Le levier inverse le calcul, mais au-delà d'un seuil précis.", "datePublished": "2026-08-31", "dateModified": "2026-08-31", "inLanguage": "fr-FR", "author": {"@type": "Organization", "name": "Kadrix", "url": "https://kadrix-fr.fr"}, "publisher": {"@type": "Organization", "name": "Kadrix", "url": "https://kadrix-fr.fr", "logo": {"@type": "ImageObject", "url": "https://kadrix-fr.fr/logo-kadrix-512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kadrix-fr.fr/blog/immobilier-locatif-ou-bourse-effet-de-levier/"}, "about": [{"@type": "Thing", "name": "Effet de levier"}, {"@type": "Thing", "name": "Investissement locatif"}, {"@type": "Thing", "name": "Placement en actions"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "L'immobilier rapporte-t-il plus que la bourse ?", "acceptedAnswer": {"@type": "Answer", "text": "Non, pas en tant que tel. Selon les rendements de référence publiés par l'IGF et le CGEDD dans un rapport d'avril 2021, le placement en logement rapporte historiquement environ 4,6 % par an au-dessus de l'inflation, contre 6,6 % pour les actions françaises comme américaines — ces chiffres étant calculés sans effet de levier, loyers nets de charges réinvestis. L'immobilier se situe entre les obligations (3 %) et les actions en termes de couple rendement-risque. Ce qui peut inverser la comparaison, c'est l'emprunt, pas le rendement intrinsèque de l'actif."}}, {"@type": "Question", "name": "Pourquoi dit-on que l'immobilier est le seul placement à effet de levier ?", "acceptedAnswer": {"@type": "Answer", "text": "Parce qu'aucune banque ne prête à un particulier pour acheter des actions, alors que le crédit immobilier est un produit courant. Le rapport IGF-CGEDD le formule sans ambiguïté : pour un particulier, le logement est le seul actif qui permette de faire jouer l'effet de levier. C'est la différence structurelle entre les deux placements — pas le rendement, mais l'accès au crédit."}}, {"@type": "Question", "name": "À partir de quel rendement locatif l'immobilier devient-il plus intéressant que la bourse ?", "acceptedAnswer": {"@type": "Answer", "text": "Dans une simulation à effort d'épargne identique sur 20 ans (même apport, mêmes versements mensuels), le point de bascule se situe autour de 7 % de rendement brut. En dessous, un placement en actions produit un patrimoine supérieur à horizon 20 ans ; au-dessus, l'immobilier à crédit l'emporte. Ce seuil varie entre environ 6 % et 8 % selon le taux du crédit, la durée, le niveau de charges et l'hypothèse de revalorisation retenue. Il ne s'agit pas d'une règle universelle mais d'un ordre de grandeur à recalculer sur son propre projet."}}, {"@type": "Question", "name": "Le levier peut-il faire perdre plus que sa mise ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, et c'est la différence de nature entre les deux placements. Le rapport IGF-CGEDD le note explicitement : la valeur nette d'un placement en logement avec effet de levier peut devenir négative, alors que celle d'un placement en actions sans levier reste toujours positive. Concrètement, avec un financement à 90 % du prix, une baisse de 15 % du marché suffit à ce que la revente ne couvre plus le capital restant dû pendant les deux ou trois premières années."}}, {"@type": "Question", "name": "Combien de temps faut-il pour rentabiliser les frais d'acquisition ?", "acceptedAnswer": {"@type": "Answer", "text": "Les frais de notaire (environ 8 % dans l'ancien) et les frais d'agence à la revente (autour de 5 %) représentent une perte sèche d'environ 13 % du prix, à rattraper avant tout gain. Avec une revalorisation nominale de 1 % par an, il faut environ treize ans pour simplement retrouver sa mise. À prix stable, on ne la retrouve jamais. C'est la raison principale pour laquelle un investissement immobilier ne s'envisage pas sur un horizon court."}}, {"@type": "Question", "name": "Faut-il choisir entre les deux ?", "acceptedAnswer": {"@type": "Answer", "text": "Pas nécessairement. Le rapport IGF-CGEDD relève que la corrélation entre le rendement du placement en logement et celui des actions est très faible sur des horizons de cinq à huit ans — les coefficients mesurés se situent entre 0 et 0,12. Autrement dit, les deux placements évoluent assez indépendamment l'un de l'autre, ce qui en fait des actifs complémentaires plutôt que concurrents dans un patrimoine."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://kadrix-fr.fr"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kadrix-fr.fr/blog/"}, {"@type": "ListItem", "position": 3, "name": "Immobilier locatif ou bourse : ce que change vraiment l'effet de levier", "item": "https://kadrix-fr.fr/blog/immobilier-locatif-ou-bourse-effet-de-levier/"}]}]}</script>
+</head>
+<body>
+<header class="nav"><div class="nav-in">
+  <a class="logo" href="https://kadrix-fr.fr/">Kadrix<span>.</span></a>
+  <a class="nav-cta" href="https://kadrix-fr.fr/#simulateur">Simulateur gratuit</a>
+</div></header>
+<div class="wrap">
+<article>
+  <span class="mono kicker">Comparatif</span>
+  <h1>Immobilier locatif ou bourse : ce que change vraiment l'effet de levier</h1>
+  <div class="meta">Publié le 31 août 2026 · Lecture 11 min</div>
+
+  <div class="answer">
+    <p><strong>En résumé :</strong> à capital égal et sans emprunt, les actions rapportent
+    historiquement plus que l'immobilier — 6,6 % contre 4,6 % par an au-dessus de l'inflation, selon les
+    chiffres de référence publiés par l'IGF et le CGEDD. Ce qui distingue réellement l'immobilier, ce
+    n'est pas son rendement, c'est qu'il est le seul placement qu'un particulier puisse financer à
+    crédit. Ce levier peut inverser la comparaison — mais seulement au-delà d'environ 7 % de rendement
+    brut, et au prix d'un risque que les actions sans levier ne comportent pas.</p>
+  </div>
+
+  <p class="lede">« Dans quoi investir mon argent ? » La réponse dépend moins du placement que de la
+  manière dont on y accède. Voici ce que disent les chiffres officiels, ce que change l'emprunt, et
+  à partir de quel seuil l'un devient réellement plus intéressant que l'autre.</p>
+
+  <h2>Ce que dit l'État sur le rendement des placements</h2>
+  <p>Il existe une source française de référence sur cette question, rarement citée : un rapport conjoint
+  de l'Inspection générale des finances et du Conseil général de l'environnement et du développement
+  durable, publié en avril 2021, qui établit les rendements « tendanciels » des principaux placements sur
+  près de deux siècles de données.</p>
+
+  <table>
+    <tr><th>Placement</th><th>Rendement annuel réel</th></tr>
+    <tr><td>Or</td><td>+ 0 %</td></tr>
+    <tr><td>Monétaire (court terme)</td><td>+ 2 %</td></tr>
+    <tr><td>Obligations</td><td>+ 3 %</td></tr>
+    <tr><td><strong>Logement locatif, sans levier</strong></td><td><strong>+ 4,6 %</strong></td></tr>
+    <tr><td><strong>Actions (françaises et américaines)</strong></td><td><strong>+ 6,6 %</strong></td></tr>
+  </table>
+  <p style="font-size:.85rem;color:var(--faint)">Rendements totaux annuels au-dessus de l'inflation,
+  revenus réinvestis. Pour le logement : loyers nets de charges, ces dernières étant estimées à environ
+  40 % du loyer sur la période récente. Source : rapport IGF-CGEDD, avril 2021.</p>
+
+  <p>Le constat est net, et il va à l'encontre d'une intuition très répandue : <strong>en tant qu'actif,
+  l'immobilier locatif rapporte moins que les actions</strong>. Il se situe, selon les termes du rapport,
+  « à mi-chemin entre les actions d'une part et les obligations d'autre part » en termes de couple
+  rendement-risque.</p>
+
+  <p>Sur 20 ans, appliqué à 50 000 € placés sans emprunt, l'écart donne ceci :</p>
+  <table>
+    <tr><th>Placement</th><th>Valeur à 20 ans</th></tr>
+    <tr><td>Logement (+ 4,6 %/an)</td><td>122 900 €</td></tr>
+    <tr><td>Actions (+ 6,6 %/an)</td><td>179 500 €</td></tr>
+    <tr><td><strong>Écart</strong></td><td><strong>+ 56 600 €</strong></td></tr>
+  </table>
+  <p style="font-size:.85rem;color:var(--faint)">En euros constants, hors fiscalité.</p>
+
+  <p>Une nuance importante : ces séries longues portent sur le logement <em>à Paris</em>, seul marché
+  résidentiel pour lequel on dispose de données remontant aussi loin. Le rapport précise que les
+  placements hors Paris présentent sur le long terme des rendements locatifs plus élevés — un point qui
+  aura son importance plus loin.</p>
+
+  <h2>La seule chose que l'immobilier a et que rien d'autre n'a</h2>
+  <p>Si l'immobilier rapporte moins, pourquoi tant de gens s'y intéressent ? Le même rapport donne la
+  réponse en une phrase.</p>
+
+  <div class="quote">
+    <p>« Pour un particulier, cet actif est le seul qui permette de faire jouer l'effet de levier, et il
+    est fréquent que l'emprunt finance 90 % de l'achat. »</p>
+    <cite>Rapport IGF-CGEDD, avril 2021, § 2.1.3</cite>
+  </div>
+
+  <p>C'est là, et nulle part ailleurs, que se situe la différence de nature entre les deux placements.
+  Aucune banque ne prête 180 000 € à un particulier pour acheter un portefeuille d'actions. Toutes le
+  font pour acheter un appartement. Le rendement de l'actif n'est pas le sujet : <strong>c'est l'accès
+  au crédit qui l'est</strong>.</p>
+
+  <p>Le mécanisme est simple. Si vous empruntez à 3,5 % pour acheter un actif qui rapporte davantage,
+  l'écart vous revient — sur la totalité du montant emprunté, pas seulement sur votre apport. Le rapport
+  note que cet effet « rapproche le placement en logement du placement en actions » en termes de
+  rendement.</p>
+
+  <h2>La comparaison que presque personne ne fait correctement</h2>
+  <p>La plupart des comparatifs s'arrêtent là et concluent en faveur de l'immobilier. Ils commettent
+  pourtant une erreur de méthode : ils comparent un apport placé en bourse à un bien acheté à crédit,
+  <strong>en oubliant que le bien exige aussi un versement mensuel</strong>.</p>
+
+  <p>Car un investissement locatif ne s'autofinance presque jamais aux conditions actuelles. Chaque mois,
+  la différence entre la mensualité de crédit et le loyer net sort de votre poche. Pour que la
+  comparaison ait un sens, il faut donc investir <em>exactement le même montant</em> en actions, chaque
+  mois, pendant toute la durée.</p>
+
+  <h3>Le scénario testé</h3>
+  <ul>
+    <li>Bien à 200 000 €, plus 16 000 € de frais de notaire — coût total 216 000 €</li>
+    <li>Apport de 50 000 €, emprunt de 166 000 € à 3,5 % sur 20 ans</li>
+    <li>Rendement brut de 5,5 %, soit 11 000 € de loyers annuels</li>
+    <li>Charges de 40 % du loyer (le taux retenu par le rapport officiel)</li>
+    <li>Loyers indexés sur l'inflation, mensualité de crédit fixe</li>
+  </ul>
+  <p>La mensualité ressort à 963 €, le loyer net à 550 €. <strong>L'effort d'épargne est donc de
+  413 € par mois</strong>, soit environ 99 000 € sur vingt ans, en plus de l'apport initial.</p>
+
+  <p>En face, le même apport de 50 000 € placé en actions, abondé des mêmes 413 € mensuels, à
+  6,6 % réel.</p>
+
+  <table>
+    <tr><th>Revalorisation du bien</th><th>Bien à 20 ans</th><th>Actions à 20 ans</th></tr>
+    <tr><td>0 %/an réel</td><td>200 000 €</td><td>314 400 €</td></tr>
+    <tr><td>+ 1 %/an réel</td><td>244 000 €</td><td>314 400 €</td></tr>
+    <tr><td>+ 2 %/an réel</td><td>297 200 €</td><td>314 400 €</td></tr>
+  </table>
+  <p style="font-size:.85rem;color:var(--faint)">En euros constants. Pour le bien : valeur nette de
+  dette, le crédit étant intégralement remboursé au terme.</p>
+
+  <p>À 5,5 % de rendement brut, <strong>le placement en actions l'emporte dans les trois scénarios</strong>,
+  y compris avec une revalorisation du bien de 2 % par an au-dessus de l'inflation — une hypothèse déjà
+  généreuse au regard des tendances longues.</p>
+
+  <h2>Le seuil qui fait basculer le calcul</h2>
+  <p>Ce résultat n'est pas une condamnation de l'immobilier : il dépend entièrement du rendement locatif
+  retenu. En faisant varier ce seul paramètre, on trouve le point de bascule.</p>
+
+  <table>
+    <tr><th>Rendement brut</th><th>Effort mensuel</th><th>Bien</th><th>Actions</th></tr>
+    <tr><td>4,5 %</td><td>513 €</td><td>244 000 €</td><td>362 800 €</td></tr>
+    <tr><td>5,5 %</td><td>413 €</td><td>244 000 €</td><td>314 400 €</td></tr>
+    <tr><td>6,5 %</td><td>313 €</td><td>244 000 €</td><td>266 000 €</td></tr>
+    <tr><td><strong>7,5 %</strong></td><td><strong>213 €</strong></td><td><strong>244 000 €</strong></td><td><strong>217 500 €</strong></td></tr>
+    <tr><td>8,5 %</td><td>113 €</td><td>244 000 €</td><td>169 100 €</td></tr>
+  </table>
+
+  <p>Le point de bascule se situe <strong>autour de 7 % de rendement brut</strong>. En dessous, mieux
+  vaut placer son épargne en actions. Au-dessus, le levier immobilier prend l'avantage — et il le prend
+  vite, car chaque point de rendement supplémentaire réduit l'effort d'épargne tout en conservant la
+  totalité de la valeur du bien.</p>
+
+  <p>Ce seuil bouge selon les hypothèses, mais dans une fourchette étroite : entre 6,2 % et 7,7 % selon
+  le taux du crédit (2,5 % à 4,5 %), entre 5,9 % et 7,0 % selon le niveau de charges retenu, et entre
+  5,9 % et 7,9 % selon l'hypothèse de revalorisation. <strong>Un ordre de grandeur de 7 %, donc, et non
+  une valeur exacte</strong> — mais suffisamment stable pour servir de repère.</p>
+
+  <p>C'est ici que la remarque du rapport sur Paris prend tout son sens. Dans les grandes villes, où les
+  rendements bruts dépassent rarement 4 à 5 %, le levier ne suffit pas à compenser le prix d'entrée.
+  Dans les villes moyennes, où des rendements de 7 à 9 % restent accessibles, l'équation s'inverse.
+  <strong>Le débat « immobilier ou bourse » se tranche moins par le type d'actif que par le prix
+  payé.</strong></p>
+
+  <div class="cta-box">
+    <h3>Quel est le rendement réel de votre projet ?</h3>
+    <p>Le simulateur Kadrix calcule le rendement brut et net, le cash-flow réel et l'effort d'épargne
+    mensuel d'un bien — les trois chiffres dont vous avez besoin pour situer votre projet par rapport à
+    ce seuil. Gratuit, sans inscription.</p>
+    <a class="btn" href="https://kadrix-fr.fr/#simulateur">Ouvrir le simulateur</a>
+  </div>
+
+  <h2>Ce que le levier coûte vraiment</h2>
+  <p>Un rendement plus élevé n'est jamais gratuit. Le rapport IGF-CGEDD le signale dans une note de bas
+  de page qui mérite d'être lue attentivement : le levier ne fait pas qu'augmenter le rendement espéré,
+  il change la nature du risque.</p>
+
+  <div class="quote">
+    <p>« La valeur nette d'un placement en logement avec effet de levier peut devenir négative, alors que
+    celle d'un placement en actions sans effet de levier est toujours positive. »</p>
+    <cite>Rapport IGF-CGEDD, avril 2021, note 24</cite>
+  </div>
+
+  <p>Concrètement, avec le financement à 90 % que le rapport décrit comme fréquent, et une baisse de
+  marché de 15 % :</p>
+
+  <table>
+    <tr><th>Après</th><th>Capital restant dû</th><th>Valeur nette si − 15 %</th></tr>
+    <tr><td>1 an</td><td>173 700 €</td><td>− 12 200 €</td></tr>
+    <tr><td>2 ans</td><td>167 100 €</td><td>− 5 600 €</td></tr>
+    <tr><td>3 ans</td><td>160 300 €</td><td>+ 1 200 €</td></tr>
+    <tr><td>5 ans</td><td>146 000 €</td><td>+ 15 500 €</td></tr>
+  </table>
+  <p style="font-size:.85rem;color:var(--faint)">Valeur nette = prix de revente diminué de 5 % de frais
+  d'agence, moins le capital restant dû.</p>
+
+  <p>Pendant les deux premières années, <strong>vendre ne suffirait pas à rembourser la banque</strong> :
+  il faudrait remettre de l'argent pour avoir le droit de se séparer du bien. Un portefeuille d'actions,
+  même après un krach de 50 %, conserve toujours une valeur positive. C'est une différence de nature, pas
+  de degré.</p>
+
+  <h3>Le coût d'entrée, souvent sous-estimé</h3>
+  <p>À cela s'ajoute une friction propre à l'immobilier : les frais de notaire à l'achat (environ 8 %
+  dans l'ancien) et les frais d'agence à la revente (autour de 5 %) représentent ensemble une perte
+  sèche d'environ 13 % du prix. Avec une revalorisation nominale de 1 % par an, <strong>il faut environ
+  treize ans pour simplement retrouver sa mise</strong>. À prix stable, on ne la retrouve jamais.</p>
+
+  <p>Sur un compte-titres ou un PEA, les frais d'entrée et de sortie sur un ETF sont de l'ordre de
+  quelques dixièmes de pourcent. La comparaison n'a pas d'équivalent.</p>
+
+  <h2>Ce que les chiffres ne disent pas</h2>
+  <p>Trois différences ne se lisent dans aucun tableau, et pèsent pourtant lourd dans une décision.</p>
+
+  <p><strong>Le temps.</strong> Un ETF ne demande aucune heure de travail après l'achat. Un bien locatif
+  demande de chercher, visiter, négocier, financer, rénover, trouver un locataire, gérer les
+  incidents, faire une déclaration fiscale spécifique. Ce temps n'apparaît nulle part dans le rendement
+  affiché — c'est ce que le rapport appelle, pour les particuliers, un « coût masqué ».</p>
+
+  <p><strong>La liquidité.</strong> Un portefeuille d'actions se vend en quelques secondes. Un
+  appartement se vend en quelques mois, à un prix incertain, et pas au moment de votre choix. Le rapport
+  souligne que cette illiquidité impose de fait un horizon long.</p>
+
+  <p><strong>La concentration.</strong> Un ETF mondial, c'est plus de mille cinq cents entreprises
+  réparties sur des dizaines de pays. Un investissement locatif, c'est un bien, dans une rue, avec un
+  locataire. Si la ville décline, si la copropriété se dégrade, si le locataire cesse de payer, il n'y a
+  aucune diversification pour amortir le choc.</p>
+
+  <p>À l'inverse — et c'est un point en faveur de l'immobilier — le rapport relève que la corrélation
+  entre le rendement du logement et celui des actions est <strong>très faible</strong> sur des horizons
+  de cinq à huit ans, avec des coefficients compris entre 0 et 0,12. Les deux placements évoluent
+  indépendamment l'un de l'autre. Vu sous cet angle, la vraie question n'est peut-être pas « lequel
+  choisir », mais « dans quelle proportion combiner les deux ».</p>
+
+  <h2>Comment trancher, concrètement</h2>
+  <p>Il n'y a pas de bon placement dans l'absolu, seulement des placements adaptés à une situation. Trois
+  questions permettent d'y voir clair :</p>
+
+  <ol>
+    <li><strong>Quel rendement brut puis-je réellement obtenir ?</strong> C'est la question qui décide.
+    En dessous de 7 %, le levier ne compense pas la performance supérieure des actions ; au-dessus, il
+    la dépasse. Ce chiffre se calcule sur un bien précis, pas sur une moyenne de marché.</li>
+    <li><strong>L'effort d'épargne mensuel est-il soutenable sur toute la durée ?</strong> Un cash-flow
+    négatif n'est pas disqualifiant en soi — c'est le prix du levier. Il devient un problème s'il n'est
+    pas tenable en cas de vacance locative, de travaux imprévus ou de changement de situation
+    personnelle.</li>
+    <li><strong>Quel est mon horizon réel ?</strong> En dessous de dix ans, les frais d'acquisition
+    rendent l'opération très difficile à rentabiliser. Si l'horizon est incertain, la liquidité des
+    actions a une valeur en soi.</li>
+  </ol>
+
+  <p>Une dernière remarque, qui vaut pour les deux placements : les chiffres présentés ici sont des
+  moyennes de très long terme. Personne n'obtient 6,6 % par an tous les ans en bourse, ni 4,6 % en
+  immobilier. Ces rendements recouvrent des décennies fastes et des krachs de 30 à 50 %. Ils décrivent
+  une tendance, pas une promesse.</p>
+
+  <h2>Questions fréquentes</h2>
+  <div class="faq">
+      <details><summary>L&#x27;immobilier rapporte-t-il plus que la bourse ?</summary><div>Non, pas en tant que tel. Selon les rendements de référence publiés par l&#x27;IGF et le CGEDD dans un rapport d&#x27;avril 2021, le placement en logement rapporte historiquement environ 4,6 % par an au-dessus de l&#x27;inflation, contre 6,6 % pour les actions françaises comme américaines — ces chiffres étant calculés sans effet de levier, loyers nets de charges réinvestis. L&#x27;immobilier se situe entre les obligations (3 %) et les actions en termes de couple rendement-risque. Ce qui peut inverser la comparaison, c&#x27;est l&#x27;emprunt, pas le rendement intrinsèque de l&#x27;actif.</div></details>
+      <details><summary>Pourquoi dit-on que l&#x27;immobilier est le seul placement à effet de levier ?</summary><div>Parce qu&#x27;aucune banque ne prête à un particulier pour acheter des actions, alors que le crédit immobilier est un produit courant. Le rapport IGF-CGEDD le formule sans ambiguïté : pour un particulier, le logement est le seul actif qui permette de faire jouer l&#x27;effet de levier. C&#x27;est la différence structurelle entre les deux placements — pas le rendement, mais l&#x27;accès au crédit.</div></details>
+      <details><summary>À partir de quel rendement locatif l&#x27;immobilier devient-il plus intéressant que la bourse ?</summary><div>Dans une simulation à effort d&#x27;épargne identique sur 20 ans (même apport, mêmes versements mensuels), le point de bascule se situe autour de 7 % de rendement brut. En dessous, un placement en actions produit un patrimoine supérieur à horizon 20 ans ; au-dessus, l&#x27;immobilier à crédit l&#x27;emporte. Ce seuil varie entre environ 6 % et 8 % selon le taux du crédit, la durée, le niveau de charges et l&#x27;hypothèse de revalorisation retenue. Il ne s&#x27;agit pas d&#x27;une règle universelle mais d&#x27;un ordre de grandeur à recalculer sur son propre projet.</div></details>
+      <details><summary>Le levier peut-il faire perdre plus que sa mise ?</summary><div>Oui, et c&#x27;est la différence de nature entre les deux placements. Le rapport IGF-CGEDD le note explicitement : la valeur nette d&#x27;un placement en logement avec effet de levier peut devenir négative, alors que celle d&#x27;un placement en actions sans levier reste toujours positive. Concrètement, avec un financement à 90 % du prix, une baisse de 15 % du marché suffit à ce que la revente ne couvre plus le capital restant dû pendant les deux ou trois premières années.</div></details>
+      <details><summary>Combien de temps faut-il pour rentabiliser les frais d&#x27;acquisition ?</summary><div>Les frais de notaire (environ 8 % dans l&#x27;ancien) et les frais d&#x27;agence à la revente (autour de 5 %) représentent une perte sèche d&#x27;environ 13 % du prix, à rattraper avant tout gain. Avec une revalorisation nominale de 1 % par an, il faut environ treize ans pour simplement retrouver sa mise. À prix stable, on ne la retrouve jamais. C&#x27;est la raison principale pour laquelle un investissement immobilier ne s&#x27;envisage pas sur un horizon court.</div></details>
+      <details><summary>Faut-il choisir entre les deux ?</summary><div>Pas nécessairement. Le rapport IGF-CGEDD relève que la corrélation entre le rendement du placement en logement et celui des actions est très faible sur des horizons de cinq à huit ans — les coefficients mesurés se situent entre 0 et 0,12. Autrement dit, les deux placements évoluent assez indépendamment l&#x27;un de l&#x27;autre, ce qui en fait des actifs complémentaires plutôt que concurrents dans un patrimoine.</div></details>
+  </div>
+
+  <div class="related">
+    <span class="mono">À lire ensuite</span>
+    <a href="https://kadrix-fr.fr/blog/hcsf-capacite-emprunt-investissement-locatif/">HCSF : combien puis-je vraiment emprunter pour investir&nbsp;?
+      <span>Le levier a une limite réglementaire — elle arrive plus tôt qu'on ne le pense</span></a>
+    <a href="https://kadrix-fr.fr/blog/dispositif-jeanbrun-2026-ce-qui-est-sur/">Dispositif Jeanbrun : ce qu'il faut savoir avant de s'engager 9 ans
+      <span>Un point décisif divise les guides spécialisés</span></a>
+    <a href="https://kadrix-fr.fr/blog/sci-is-lmnp-reel-fiscalite-revente/">SCI à l'IS ou LMNP au réel : pourquoi la comparaison bascule à la revente
+      <span>L'écart qui se creuse avec le temps, dans le sens inverse de l'idée reçue</span></a>
+    <a href="https://kadrix-fr.fr/blog/documents-a-demander-avant-achat-locatif/">Les documents à demander avant de signer un bien locatif
+      <span>Cinq documents qui protègent votre calcul de rentabilité</span></a>
+  </div>
+
+  <p style="text-align:center;margin-top:26px">
+    <a href="https://kadrix-fr.fr/blog/" class="btn">Voir tous les articles</a>
+  </p>
+
+  <p class="disclaimer">Article pédagogique. Les rendements de référence sont ceux publiés dans
+  « Prix, loyers et couple rendement-risque du placement en logement », extrait d'un rapport IGF-CGEDD
+  d'avril 2021, disponible sur le site de l'IGEDD. Les simulations comparatives sont des calculs propres
+  à Kadrix, réalisés à partir des hypothèses explicitement indiquées ; elles ne tiennent pas compte de la
+  fiscalité, qui dépend de la situation de chacun et du régime retenu de part et d'autre (PEA, assurance-vie,
+  compte-titres, LMNP, foncier, société). Les performances passées ne préjugent pas des performances
+  futures. Ce contenu ne constitue ni un conseil en investissement, ni une recommandation d'achat.</p>
+</article>
+<footer>
+  <a href="https://kadrix-fr.fr/">Accueil</a><a href="https://kadrix-fr.fr/blog/">Blog</a>
+  <a href="https://kadrix-fr.fr/#simulateur">Simulateur</a><a href="https://kadrix-fr.fr/#kit">Le Kit</a>
+  <a href="https://kadrix-fr.fr/#mentions">Mentions légales</a>
+  <p style="margin-top:16px">Kadrix — outil pédagogique d'analyse d'investissement locatif.</p>
+</footer>
+</div>
+</body>
+</html>
