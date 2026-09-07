@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DPE F ou G : combien négocier sur le prix ?</title>
+<meta name="description" content="La décote du marché couvre-t-elle vraiment les travaux ? Sur un appartement, presque jamais. Sur une maison classée G, souvent. La méthode de calcul.">
+<link rel="canonical" href="https://kadrix-fr.fr/blog/negocier-prix-dpe-f-g/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DPE F ou G : combien négocier sur le prix ?">
+<meta property="og:description" content="La décote du marché couvre-t-elle vraiment les travaux ? Sur un appartement, presque jamais. Sur une maison classée G, souvent. La méthode de calcul.">
+<meta property="og:url" content="https://kadrix-fr.fr/blog/negocier-prix-dpe-f-g/">
+<meta property="og:image" content="https://kadrix-fr.fr/logo-kadrix-512.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://kadrix-fr.fr/logo-kadrix-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1B2E; --navy-2:#122540; --navy-3:#1A3356;
+    --gold:#C9A227; --gold-soft:#E3C766; --cream:#F5F1E6;
+    --green:#7BD8A4; --amber:#F0B562; --red:#EE8D7B;
+    --line:rgba(201,162,39,.28); --muted:rgba(245,241,230,.72); --faint:rgba(245,241,230,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'IBM Plex Sans',sans-serif;background:var(--navy);color:var(--cream);
+       -webkit-font-smoothing:antialiased;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  a{color:var(--gold-soft)}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.14em;
+        text-transform:uppercase;color:var(--gold-soft)}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(13,27,46,.94);
+             backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;
+          justify-content:space-between;align-items:center;gap:16px}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:var(--cream);text-decoration:none}
+  .logo span{color:var(--gold)}
+  .nav-cta{font-size:.86rem;padding:9px 16px;border-radius:8px;background:var(--gold);
+           color:var(--navy);text-decoration:none;font-weight:600;white-space:nowrap}
+  article{padding:44px 0 20px}
+  .kicker{display:block;margin-bottom:14px}
+  article h1{font-size:clamp(1.9rem,5.2vw,2.7rem);margin-bottom:18px}
+  .meta{font-size:.82rem;color:var(--faint);margin-bottom:30px;
+        padding-bottom:20px;border-bottom:1px solid var(--line)}
+  .lede{font-size:1.12rem;color:var(--cream);margin-bottom:26px}
+  article h2{font-size:1.42rem;margin:38px 0 14px;color:var(--gold-soft)}
+  article h3{font-size:1.12rem;margin:26px 0 10px}
+  article p{margin-bottom:16px;color:var(--muted)}
+  article ul,article ol{margin:0 0 18px 22px;color:var(--muted)}
+  article li{margin-bottom:8px}
+  article strong{color:var(--cream);font-weight:600}
+  .answer{background:var(--navy-2);border-left:3px solid var(--gold);
+          padding:20px 22px;border-radius:0 10px 10px 0;margin:0 0 30px}
+  .answer p{margin:0;color:var(--cream)}
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.9rem}
+  th,td{padding:11px 10px;text-align:left;border-bottom:1px solid rgba(245,241,230,.12)}
+  th{color:var(--gold-soft);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+  td:not(:first-child),th:not(:first-child){text-align:right;font-family:'IBM Plex Mono',monospace}
+  .cta-box{background:var(--navy-2);border:1px solid var(--line);border-radius:12px;
+           padding:26px;margin:36px 0;text-align:center}
+  .cta-box h3{margin-bottom:8px;color:var(--cream)}
+  .cta-box p{color:var(--muted);font-size:.94rem;margin-bottom:18px}
+  .btn{display:inline-block;padding:13px 26px;border-radius:9px;background:var(--gold);
+       color:var(--navy);text-decoration:none;font-weight:600}
+  .faq{margin-top:14px}
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+  .faq summary{cursor:pointer;font-weight:600;color:var(--cream);list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';float:right;color:var(--gold)}
+  .faq details[open] summary::after{content:'−'}
+  .faq div{margin-top:10px;color:var(--muted);font-size:.94rem}
+  .related{margin:40px 0 0;padding-top:26px;border-top:1px solid var(--line)}
+  .related a{display:block;padding:12px 0;text-decoration:none;color:var(--cream);
+             border-bottom:1px solid rgba(245,241,230,.1)}
+  .related a span{display:block;font-size:.8rem;color:var(--faint);margin-top:3px}
+  .disclaimer{margin:34px 0 0;font-size:.8rem;color:var(--faint);font-style:italic}
+  footer{margin-top:50px;padding:28px 0 40px;border-top:1px solid var(--line);
+         font-size:.82rem;color:var(--faint);text-align:center}
+  footer a{color:var(--muted);text-decoration:none;margin:0 9px}
+  .card{display:block;background:var(--navy-2);border:1px solid var(--line);border-radius:12px;
+        padding:22px;margin-bottom:16px;text-decoration:none;transition:border-color .2s}
+  .card:hover{border-color:var(--gold)}
+  .card h2{font-size:1.2rem;margin:6px 0 8px;color:var(--cream)}
+  .card p{color:var(--muted);font-size:.93rem;margin:0}
+  @media(max-width:600px){ .nav-cta{font-size:.8rem;padding:8px 12px} }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Négocier un DPE F ou G : le seuil en dessous duquel vous surpayez", "description": "La décote du marché couvre-t-elle vraiment les travaux ? Sur un appartement, presque jamais. Sur une maison classée G, souvent. La méthode de calcul.", "datePublished": "2026-09-15", "dateModified": "2026-09-15", "inLanguage": "fr-FR", "author": {"@type": "Organization", "name": "Kadrix", "url": "https://kadrix-fr.fr"}, "publisher": {"@type": "Organization", "name": "Kadrix", "url": "https://kadrix-fr.fr", "logo": {"@type": "ImageObject", "url": "https://kadrix-fr.fr/logo-kadrix-512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kadrix-fr.fr/blog/negocier-prix-dpe-f-g/"}, "about": [{"@type": "Thing", "name": "Négociation immobilière"}, {"@type": "Thing", "name": "Diagnostic de performance énergétique"}, {"@type": "Thing", "name": "Rénovation énergétique"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Combien peut-on négocier sur un bien classé F ou G ?", "acceptedAnswer": {"@type": "Answer", "text": "Il n'existe pas de pourcentage universel : la marge réelle dépend de l'urgence du vendeur, du nombre d'acquéreurs intéressés et de la tension du marché local, autant d'éléments qui ne se calculent pas. En revanche, on peut calculer un seuil objectif : le prix au-delà duquel l'opération revient plus cher qu'un bien équivalent déjà classé D, une fois les travaux payés. Sur un appartement classé F avec une rénovation à 450 €/m², ce seuil impose typiquement une négociation d'environ 13 % sous le prix affiché."}}, {"@type": "Question", "name": "La décote affichée suffit-elle à couvrir les travaux ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend du type de bien, et l'écart est frappant. Sur un appartement, la décote de marché cesse de couvrir les travaux dès environ 162 €/m² pour un classé F et 258 €/m² pour un classé G — soit en dessous du coût minimum d'une rénovation énergétique. Sur une maison, les seuils montent à environ 398 €/m² pour un F et 598 €/m² pour un G, ce dernier dépassant le coût courant d'une rénovation globale. Autrement dit : sur un appartement, il faut presque toujours négocier ; sur une maison classée G, la décote couvre souvent déjà les travaux."}}, {"@type": "Question", "name": "Combien coûte la rénovation énergétique d'une passoire thermique ?", "acceptedAnswer": {"@type": "Answer", "text": "L'ADEME situe les prix observés en 2026 entre 200 et 350 €/m² pour des travaux ciblés, et entre 450 et 500 €/m² pour une rénovation globale. D'autres sources relèvent des fourchettes allant jusqu'à 1 200 €/m² sur les chantiers les plus lourds. Cette dispersion est considérable, et c'est précisément pourquoi aucune estimation au mètre carré ne remplace des devis : les écarts entre devis pour des travaux identiques atteignent couramment 30 à 50 %."}}, {"@type": "Question", "name": "Quels documents demander avant de négocier ?", "acceptedAnswer": {"@type": "Answer", "text": "L'audit énergétique réglementaire est obligatoire pour la vente d'un logement classé F ou G depuis 2023, et E depuis 2025. Il propose au moins deux scénarios de rénovation chiffrés : c'est la base de discussion la plus solide, et le vendeur doit vous le fournir. S'y ajoutent les trois derniers procès-verbaux d'assemblée générale en copropriété, l'avis de taxe foncière et, en secteur patrimonial, l'avis du service urbanisme sur la faisabilité des travaux."}}, {"@type": "Question", "name": "Le calcul du seuil de parité suffit-il à décider ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Il fixe une limite au-delà de laquelle l'opération devient objectivement moins intéressante qu'un bien déjà classé D, mais il ne dit rien de la faisabilité technique des travaux, de leur coût réel avant devis, ni de la marge que le vendeur acceptera. C'est un repère de décision, pas une prédiction : il indique jusqu'où il est rationnel d'aller, pas ce que vous obtiendrez."}}, {"@type": "Question", "name": "Faut-il éviter les passoires thermiques ?", "acceptedAnswer": {"@type": "Answer", "text": "Pas nécessairement. La décote de marché sur les logements classés F et G s'est creusée d'année en année, au point de dépasser le coût des travaux dans certaines configurations — typiquement les maisons classées G. Le risque n'est pas le type de bien, mais l'achat sans chiffrage : une décote peut aussi bien compenser un coût réel que créer une opportunité, et seul le calcul permet de distinguer les deux."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://kadrix-fr.fr"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kadrix-fr.fr/blog/"}, {"@type": "ListItem", "position": 3, "name": "Négocier un DPE F ou G : le seuil en dessous duquel vous surpayez", "item": "https://kadrix-fr.fr/blog/negocier-prix-dpe-f-g/"}]}]}</script>
+</head>
+<body>
+<header class="nav"><div class="nav-in">
+  <a class="logo" href="https://kadrix-fr.fr/">Kadrix<span>.</span></a>
+  <a class="nav-cta" href="https://kadrix-fr.fr/#simulateur">Simulateur gratuit</a>
+</div></header>
+<div class="wrap">
+<article>
+  <span class="mono kicker">Méthode</span>
+  <h1>Négocier un DPE F ou G : le seuil en dessous duquel vous surpayez</h1>
+  <div class="meta">Publié le 15 septembre 2026 · Lecture 9 min</div>
+
+  <div class="answer">
+    <p><strong>En résumé :</strong> « combien négocier » n'a pas de réponse universelle — la marge
+    dépend de l'urgence du vendeur et de la tension du marché, qui ne se calculent pas. En revanche, on
+    peut calculer un <strong>seuil de parité</strong> : le prix au-delà duquel un bien classé F ou G
+    revient plus cher qu'un bien équivalent déjà classé D, travaux payés. Le résultat surprend : sur un
+    appartement, la décote du marché ne couvre presque jamais les travaux ; sur une maison classée G,
+    elle les couvre souvent.</p>
+  </div>
+
+  <p class="lede">Devant une annonce à prix bas, la question qui vient est toujours la même : de combien
+  puis-je descendre ? Elle est mal posée. Voici celle qui se calcule, et ce qu'elle révèle.</p>
+
+  <h2>Pourquoi « combien négocier » n'a pas de réponse</h2>
+  <p>La marge de négociation réelle dépend de facteurs qu'aucun tableur ne modélise : depuis combien de
+  temps le bien est en vente, si le vendeur a déjà acheté ailleurs, combien d'acquéreurs se sont
+  positionnés, si le marché local est tendu ou atone. Deux biens identiques peuvent se négocier à 3 %
+  ou à 20 % selon ces seuls paramètres.</p>
+  <p>Un article qui annoncerait « négociez 15 % sur un DPE F » livrerait donc un chiffre faux par
+  construction. Ce qui se calcule, en revanche, c'est <strong>jusqu'où il est rationnel d'aller</strong> :
+  le prix au-delà duquel vous payez plus cher qu'en achetant un bien déjà classé D.</p>
+
+  <h2>Le seuil de parité, en trois postes</h2>
+  <p>Le raisonnement part d'une comparaison simple : ce bien classé F, une fois rénové, vaudra ce que
+  vaut aujourd'hui un bien équivalent classé D. La question devient donc : combien dois-je le payer pour
+  que l'opération ne me coûte pas plus cher que d'acheter directement le bien classé D ?</p>
+
+  <p><strong>Premier poste : le coût des travaux.</strong> L'ADEME situe les prix observés en 2026 entre
+  200 et 350 €/m² pour des travaux ciblés, et entre 450 et 500 €/m² pour une rénovation globale. D'autres
+  sources professionnelles relèvent des fourchettes montant à 1 200 €/m² sur les chantiers les plus
+  lourds. Cette dispersion est le premier avertissement de cet article : aucune estimation au mètre carré
+  ne remplace des devis, et les écarts entre devis pour des travaux identiques atteignent couramment
+  30 à 50 %.</p>
+
+  <p><strong>Deuxième poste : la décote déjà intégrée au prix affiché.</strong> Elle ne s'ajoute pas au
+  calcul, elle s'en déduit — c'est un avantage déjà accordé. Les Notaires de France la mesurent chaque
+  année à partir des transactions réelles, par rapport à un bien classé D comparable.</p>
+
+  <table>
+    <tr><th>Classe</th><th>Maison</th><th>Appartement</th></tr>
+    <tr><td>Classe E</td><td>− 9 %</td><td>− 4 %</td></tr>
+    <tr><td>Classe G</td><td>− 25 %</td><td>− 12 %</td></tr>
+  </table>
+  <p style="font-size:.85rem;color:var(--faint)">Source : Notaires de France, transactions 2024. La
+  classe F n'étant pas publiée séparément, les calculs qui suivent retiennent la valeur médiane entre E
+  et G — soit 17 % pour une maison et 8 % pour un appartement. C'est une interpolation, pas une donnée
+  observée.</p>
+
+  <p><strong>Troisième poste : le manque à gagner locatif.</strong> Un logement en travaux ne se loue
+  pas. Sur un chantier de trois mois, c'est un trimestre de loyer qui ne rentre pas — auquel s'ajoute,
+  si les travaux tardent, le gel des loyers applicable aux classes F et G depuis août 2022.</p>
+
+  <h2>Un cas chiffré</h2>
+  <p>Un appartement de 65 m², classé F, dans une ville où les biens comparables classés D se négocient
+  2 400 €/m². Loyer de marché : 650 €/mois. Rénovation globale estimée à 450 €/m².</p>
+
+  <table>
+    <tr><th>Poste</th><th>Montant</th></tr>
+    <tr><td>Prix d'un bien D équivalent (65 × 2 400 €)</td><td>156 000 €</td></tr>
+    <tr><td>Décote de marché déjà appliquée (8 %)</td><td>− 12 480 €</td></tr>
+    <tr><td><strong>Prix affiché du bien classé F</strong></td><td><strong>143 520 €</strong></td></tr>
+    <tr><td>Travaux de rénovation (65 × 450 €)</td><td>− 29 250 €</td></tr>
+    <tr><td>Vacance pendant le chantier (3 mois)</td><td>− 1 950 €</td></tr>
+    <tr><td><strong>Seuil de parité</strong></td><td><strong>124 800 €</strong></td></tr>
+    <tr><td>Écart avec le prix affiché</td><td>+ 18 720 €</td></tr>
+  </table>
+
+  <p>Au prix affiché, cet appartement revient donc <strong>18 720 € plus cher</strong> que d'acheter
+  directement un bien classé D équivalent. Pour atteindre la parité, il faudrait négocier environ
+  <strong>13 % sous le prix demandé</strong>. En dessous, l'opération crée de la valeur ; au-dessus,
+  elle en détruit.</p>
+
+  <div class="cta-box">
+    <h3>Faites le calcul sur votre bien</h3>
+    <p>Le simulateur Kadrix intègre le risque DPE, le coût des travaux et le cash-flow réel — pour
+    situer un bien classé F ou G avant de faire une offre. Gratuit, sans inscription.</p>
+    <a class="btn" href="https://kadrix-fr.fr/#simulateur">Ouvrir le simulateur</a>
+  </div>
+
+  <h2>Le résultat qui surprend : maison et appartement ne se valent pas</h2>
+  <p>En faisant varier le seul coût des travaux, on obtient le montant au-delà duquel la décote du
+  marché cesse de les couvrir. C'est le chiffre le plus utile de cet article.</p>
+
+  <table>
+    <tr><th>Type de bien</th><th>Seuil de travaux</th><th>La décote suffit-elle ?</th></tr>
+    <tr><td>Appartement classé F</td><td>162 €/m²</td><td>Presque jamais</td></tr>
+    <tr><td>Appartement classé G</td><td>258 €/m²</td><td>Rarement</td></tr>
+    <tr><td>Maison classée F</td><td>398 €/m²</td><td>Parfois</td></tr>
+    <tr><td>Maison classée G</td><td>598 €/m²</td><td>Souvent</td></tr>
+  </table>
+  <p style="font-size:.85rem;color:var(--faint)">Coût de travaux au-delà duquel le prix affiché dépasse
+  le seuil de parité. À comparer à la fourchette ADEME de 200 à 500 €/m² selon l'ampleur du chantier.</p>
+
+  <p>La lecture est nette. Sur un <strong>appartement</strong>, le seuil tombe en dessous — voire très
+  en dessous — du coût minimum d'une rénovation énergétique. La décote de marché ne suffit donc presque
+  jamais : négocier n'est pas une option, c'est la condition de l'équilibre.</p>
+  <p>Sur une <strong>maison classée G</strong>, le seuil de 598 €/m² dépasse le coût courant d'une
+  rénovation globale. La décote couvre alors les travaux, et le bien peut représenter une opportunité
+  réelle au prix affiché.</p>
+  <p>L'explication tient à la structure de la décote : elle atteint 25 % sur une maison classée G contre
+  12 % sur un appartement, alors que le coût de rénovation au mètre carré reste comparable. Le marché
+  sanctionne beaucoup plus durement les maisons — au point, parfois, de sur-corriger.</p>
+
+  <h2>Ce que ce calcul ne dit pas</h2>
+  <p>Un seuil de parité est un repère, pas un verdict. Quatre éléments lui échappent complètement, et
+  ils peuvent tous inverser la conclusion.</p>
+  <p><strong>La faisabilité technique.</strong> En secteur patrimonial remarquable ou aux abords d'un
+  monument historique, l'Architecte des Bâtiments de France peut refuser le double vitrage en façade sur
+  rue ou contraindre l'isolation. Le risque n'est alors pas le surcoût, mais l'impossibilité de sortir
+  de la classe F — donc un bien non louable après 2028.</p>
+  <p><strong>Le coût réel des travaux.</strong> Toutes les fourchettes de cet article sont des ordres de
+  grandeur. Seuls des devis engagent, et l'audit énergétique réglementaire — obligatoire à la vente pour
+  les classes F et G depuis 2023, E depuis 2025 — fournit au moins deux scénarios chiffrés. Il est à
+  demander dès la première visite.</p>
+  <p><strong>Les aides.</strong> MaPrimeRénov', les certificats d'économie d'énergie et l'éco-PTZ
+  réduisent la facture, dans des proportions qui dépendent des revenus, de la nature des travaux et du
+  gain énergétique obtenu. Elles améliorent le seuil calculé ici, sans en changer la logique.</p>
+  <p><strong>La négociation elle-même.</strong> Le seuil indique jusqu'où il est rationnel d'aller. Il
+  ne dit rien de ce que le vendeur acceptera. Un bien en vente depuis huit mois et un bien mis en ligne
+  la veille ne se négocient pas de la même façon, à seuil identique.</p>
+
+  <h2>La méthode, en cinq étapes</h2>
+  <ol>
+    <li><strong>Estimer le prix d'un bien équivalent classé D</strong> dans le même secteur. C'est le
+    point de départ : sans cette référence, aucun calcul de décote n'a de sens.</li>
+    <li><strong>Récupérer l'audit énergétique</strong> auprès du vendeur, et en tirer les scénarios de
+    travaux chiffrés. Compléter par deux ou trois devis d'artisans certifiés RGE.</li>
+    <li><strong>Vérifier la faisabilité</strong> auprès du service urbanisme si le bien est en secteur
+    protégé, et les procès-verbaux d'assemblée générale s'il est en copropriété.</li>
+    <li><strong>Calculer le seuil</strong> : prix du bien D équivalent, moins les travaux, moins la
+    vacance pendant le chantier.</li>
+    <li><strong>Comparer au prix affiché.</strong> L'écart donne la négociation nécessaire pour atteindre
+    la parité — le point de départ rationnel de la discussion, pas son résultat.</li>
+  </ol>
+
+  <h2>Questions fréquentes</h2>
+  <div class="faq">
+      <details><summary>Combien peut-on négocier sur un bien classé F ou G ?</summary><div>Il n&#x27;existe pas de pourcentage universel : la marge réelle dépend de l&#x27;urgence du vendeur, du nombre d&#x27;acquéreurs intéressés et de la tension du marché local, autant d&#x27;éléments qui ne se calculent pas. En revanche, on peut calculer un seuil objectif : le prix au-delà duquel l&#x27;opération revient plus cher qu&#x27;un bien équivalent déjà classé D, une fois les travaux payés. Sur un appartement classé F avec une rénovation à 450 €/m², ce seuil impose typiquement une négociation d&#x27;environ 13 % sous le prix affiché.</div></details>
+      <details><summary>La décote affichée suffit-elle à couvrir les travaux ?</summary><div>Cela dépend du type de bien, et l&#x27;écart est frappant. Sur un appartement, la décote de marché cesse de couvrir les travaux dès environ 162 €/m² pour un classé F et 258 €/m² pour un classé G — soit en dessous du coût minimum d&#x27;une rénovation énergétique. Sur une maison, les seuils montent à environ 398 €/m² pour un F et 598 €/m² pour un G, ce dernier dépassant le coût courant d&#x27;une rénovation globale. Autrement dit : sur un appartement, il faut presque toujours négocier ; sur une maison classée G, la décote couvre souvent déjà les travaux.</div></details>
+      <details><summary>Combien coûte la rénovation énergétique d&#x27;une passoire thermique ?</summary><div>L&#x27;ADEME situe les prix observés en 2026 entre 200 et 350 €/m² pour des travaux ciblés, et entre 450 et 500 €/m² pour une rénovation globale. D&#x27;autres sources relèvent des fourchettes allant jusqu&#x27;à 1 200 €/m² sur les chantiers les plus lourds. Cette dispersion est considérable, et c&#x27;est précisément pourquoi aucune estimation au mètre carré ne remplace des devis : les écarts entre devis pour des travaux identiques atteignent couramment 30 à 50 %.</div></details>
+      <details><summary>Quels documents demander avant de négocier ?</summary><div>L&#x27;audit énergétique réglementaire est obligatoire pour la vente d&#x27;un logement classé F ou G depuis 2023, et E depuis 2025. Il propose au moins deux scénarios de rénovation chiffrés : c&#x27;est la base de discussion la plus solide, et le vendeur doit vous le fournir. S&#x27;y ajoutent les trois derniers procès-verbaux d&#x27;assemblée générale en copropriété, l&#x27;avis de taxe foncière et, en secteur patrimonial, l&#x27;avis du service urbanisme sur la faisabilité des travaux.</div></details>
+      <details><summary>Le calcul du seuil de parité suffit-il à décider ?</summary><div>Non. Il fixe une limite au-delà de laquelle l&#x27;opération devient objectivement moins intéressante qu&#x27;un bien déjà classé D, mais il ne dit rien de la faisabilité technique des travaux, de leur coût réel avant devis, ni de la marge que le vendeur acceptera. C&#x27;est un repère de décision, pas une prédiction : il indique jusqu&#x27;où il est rationnel d&#x27;aller, pas ce que vous obtiendrez.</div></details>
+      <details><summary>Faut-il éviter les passoires thermiques ?</summary><div>Pas nécessairement. La décote de marché sur les logements classés F et G s&#x27;est creusée d&#x27;année en année, au point de dépasser le coût des travaux dans certaines configurations — typiquement les maisons classées G. Le risque n&#x27;est pas le type de bien, mais l&#x27;achat sans chiffrage : une décote peut aussi bien compenser un coût réel que créer une opportunité, et seul le calcul permet de distinguer les deux.</div></details>
+  </div>
+
+  <div class="related">
+    <span class="mono">À lire ensuite</span>
+    <a href="https://kadrix-fr.fr/blog/dpe-f-prix-casse-bonne-affaire/">Décote DPE F et G : de combien le prix baisse-t-il vraiment&nbsp;?
+      <span>Les chiffres des Notaires de France, et ce que la décote compense</span></a>
+    <a href="https://kadrix-fr.fr/blog/documents-a-demander-avant-achat-locatif/">Les documents à demander avant de signer un bien locatif
+      <span>Cinq documents qui protègent votre calcul de rentabilité</span></a>
+    <a href="https://kadrix-fr.fr/blog/immobilier-locatif-ou-bourse-effet-de-levier/">Immobilier locatif ou bourse : ce que change vraiment l'effet de levier
+      <span>Le seuil de rendement au-delà duquel le levier prend l'avantage</span></a>
+    <a href="https://kadrix-fr.fr/blog/dispositif-jeanbrun-2026-ce-qui-est-sur/">Dispositif Jeanbrun : les conditions réelles avant de s'engager 9 ans
+      <span>Taux, plafonds, et le rattrapage à la revente</span></a>
+  </div>
+
+  <p style="text-align:center;margin-top:26px">
+    <a href="https://kadrix-fr.fr/blog/" class="btn">Voir tous les articles</a>
+  </p>
+
+  <p class="disclaimer">Article pédagogique. Les décotes de marché proviennent de l'étude de valeur
+  verte des Notaires de France portant sur les transactions 2024 ; la valeur retenue pour la classe F
+  est une interpolation entre les classes E et G, signalée comme telle. Les fourchettes de coût de
+  rénovation sont des ordres de grandeur (source ADEME, prix observés 2026) et ne remplacent en aucun
+  cas des devis. Ce contenu ne constitue ni un conseil en investissement, ni une méthode de négociation
+  garantissant un résultat.</p>
+</article>
+<footer>
+  <a href="https://kadrix-fr.fr/">Accueil</a><a href="https://kadrix-fr.fr/blog/">Blog</a>
+  <a href="https://kadrix-fr.fr/#simulateur">Simulateur</a><a href="https://kadrix-fr.fr/#kit">Le Kit</a>
+  <a href="https://kadrix-fr.fr/#mentions">Mentions légales</a>
+  <p style="margin-top:16px">Kadrix — outil pédagogique d'analyse d'investissement locatif.</p>
+</footer>
+</div>
+</body>
+</html>

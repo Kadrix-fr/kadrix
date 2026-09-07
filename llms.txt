@@ -20,6 +20,19 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
 
 ## Articles
 
+- [Négocier un DPE F ou G : le seuil en dessous duquel vous surpayez](https://kadrix-fr.fr/blog/negocier-prix-dpe-f-g/) :
+  méthode du seuil de parité — prix d'un bien équivalent classé D, moins le coût des travaux, moins la
+  vacance pendant le chantier. Résultat : la décote de marché cesse de couvrir les travaux dès 162 €/m²
+  pour un appartement classé F et 258 €/m² pour un G, contre 398 et 598 €/m² pour une maison. Sur un
+  appartement, il faut donc presque toujours négocier ; sur une maison classée G, la décote couvre
+  souvent déjà les travaux.
+- [Denormandie, Loc'Avantages, Jeanbrun : lequel vaut vraiment le coup ?](https://kadrix-fr.fr/blog/dispositifs-investissement-locatif-2026-comparatif/) :
+  comparatif chiffré des trois dispositifs encore souscriptibles en 2026. Point central : leurs taux
+  affichés ne portent pas sur la même base — Denormandie 12 à 21 % du prix de revient, Loc'Avantages
+  15 à 65 % des loyers bruts, Jeanbrun 3 à 5,5 % en déduction du revenu imposable. Une fois le manque à
+  gagner locatif chiffré, Loc'Avantages reste négatif en trésorerie dans tous ses scénarios, et le
+  Denormandie ressort plus généreux que le Jeanbrun (il faudrait une TMI de 66 % pour l'égaler), au prix
+  d'un zonage restrictif et du plafonnement des niches fiscales dont le Jeanbrun est exclu.
 - [Immobilier locatif ou bourse : ce que change vraiment l'effet de levier](https://kadrix-fr.fr/blog/immobilier-locatif-ou-bourse-effet-de-levier/) :
   selon les rendements de référence du rapport IGF-CGEDD d'avril 2021, le placement en logement rapporte
   4,6 % par an au-dessus de l'inflation sans effet de levier, contre 6,6 % pour les actions. L'immobilier
@@ -29,14 +42,10 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
   revalorisation retenue). Contrepartie : avec un financement à 90 %, une baisse de marché de 15 % rend
   la valeur nette négative pendant les deux premières années — un risque que les actions sans levier
   ne comportent pas.
-- [Dispositif Jeanbrun : les conditions réelles avant de s'engager 9 ans](https://kadrix-fr.fr/blog/dispositif-jeanbrun-2026-ce-qui-est-sur/) :
-  entré en vigueur le 21 février 2026 (article 47 de la loi de finances 2026), ce dispositif ouvre
-  l'amortissement fiscal à la location nue. Taux de 3,5 à 5,5 % dans le neuf, 3 à 4 % dans l'ancien
-  réhabilité, sur 80 % du prix. Plafond de 8 000 € par an et par foyer fiscal (et non par logement),
-  majoré à 10 000 ou 12 000 € selon la part des revenus en location sociale ou très sociale. L'avantage
-  n'entre pas dans le plafonnement des niches fiscales. À la revente, le prix d'acquisition est minoré
-  des amortissements déduits (source : service-public.gouv.fr, fiche F39735).
-
+- [Dispositif Jeanbrun : ce qu'il faut savoir avant de s'engager 9 ans](https://kadrix-fr.fr/blog/dispositif-jeanbrun-2026-ce-qui-est-sur/) :
+  entré en vigueur le 21 février 2026, ce dispositif ouvre pour la première fois l'amortissement fiscal
+  à la location nue (jusqu'à 12 000 €/an), sans zonage, contre un loyer plafonné et un engagement de
+  9 ans en résidence principale, en immeuble collectif uniquement.
 - [Les documents à demander avant de signer un bien locatif](https://kadrix-fr.fr/blog/documents-a-demander-avant-achat-locatif/) : cinq documents
   (PV d'AG, DPE opposable, avis de taxe foncière, état daté de copropriété, avis du service urbanisme
   en secteur protégé) qui protègent un calcul de rentabilité.
