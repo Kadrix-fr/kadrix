@@ -20,6 +20,16 @@ Tous les contenus sont pédagogiques et ne constituent pas un conseil en investi
 
 ## Articles
 
+- [Quand acheter un bien immobilier ? Les trois timings qui comptent vraiment](https://kadrix-fr.fr/blog/quand-acheter-un-bien-immobilier/) :
+  trois facteurs de timing, d'impact très inégal. Le taux de crédit pèse environ 12,3 % du prix du bien
+  par point de variation (18 437 € sur un emprunt de 145 800 € sur 20 ans) et 30 649 € de capacité
+  d'emprunt entre 2,5 % et 4,5 %. La capacité personnelle (HCSF, apport, stabilité) décide si l'achat
+  est possible. La saisonnalité ne pèse qu'entre 0 et 1,1 % du prix sur six mois : le coût de l'attente
+  est même négatif en dessous de 4,8 % de rendement brut. Ce coût double pour une résidence principale
+  (0,91 % contre 0,41 % sur un bien de 150 000 €), le loyer versé étant perdu. Cas particulier de la
+  location saisonnière : revenus concentrés sur quelques mois et régime durci par la loi Le Meur du
+  19 novembre 2024 (abattement micro-BIC à 30 % non classé, 50 % classé).
+
 - [Négocier un DPE F ou G : le seuil en dessous duquel vous surpayez](https://kadrix-fr.fr/blog/negocier-prix-dpe-f-g/) :
   méthode du seuil de parité — prix d'un bien équivalent classé D, moins le coût des travaux, moins la
   vacance pendant le chantier. Résultat : la décote de marché cesse de couvrir les travaux dès 162 €/m²
