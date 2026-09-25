@@ -66,6 +66,8 @@
   .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:var(--cream);text-decoration:none}
   .logo span{color:var(--gold)}
   .nav-links{display:flex;gap:4px;list-style:none}
+  .nav-cta{border:1px solid var(--gold);border-radius:20px;padding:6px 14px!important;color:var(--gold)!important;margin-left:4px}
+  .nav-cta:hover{background:var(--gold);color:var(--navy)!important}
   .nav-links a{
     display:block;padding:8px 12px;border-radius:6px;text-decoration:none;
     font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
@@ -82,6 +84,7 @@
       border-bottom:1px solid var(--line);padding:8px 16px 14px;gap:2px;
     }
     .nav-links.open{display:flex}
+    .nav-cta{margin-left:0;margin-top:8px;text-align:center}
   }
 
   /* ================= PAGES ================= */
@@ -322,6 +325,7 @@
       <li><a href="#kit" data-nav>Le Kit</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="#contact" data-nav>Contact</a></li>
+      <li><a href="https://kadrix-app.contact-kadrix.workers.dev" target="_blank" rel="noopener" class="nav-cta">Mon espace</a></li>
     </ul>
   </div>
 </nav>
@@ -820,9 +824,10 @@
 
   <div class="price-box">
     <span class="mono" style="display:block;margin-bottom:14px">Le Kit complet</span>
-    <div class="new">80 €</div>
-    <div class="sub">Paiement unique · Fichier Excel à vie · Mises à jour incluses</div>
+    <div class="new" id="buy-price">80 €</div>
+    <div class="sub" id="buy-sub">Paiement unique · Fichier Excel à vie · Mises à jour incluses</div>
     <a href="#" class="btn btn-gold" id="buy-link">Obtenir le Kit</a>
+    <div class="sub" id="buy-note" style="margin-top:16px;margin-bottom:0"></div>
   </div>
 
   <div class="learn-block faq">
@@ -863,8 +868,8 @@
 
   <div class="price-box">
     <span class="mono" style="display:block;margin-bottom:14px">L'analyse sur mesure</span>
-    <div class="new">49 €</div>
-    <div class="sub">Rapport PDF sous 48 h ouvrées · Une question de suivi incluse</div>
+    <div class="new" id="analyse-price">49 €</div>
+    <div class="sub" id="analyse-sub">Rapport PDF sous 48 h ouvrées · Une question de suivi incluse</div>
     <a href="#" class="btn btn-gold" id="analyse-link">Demander mon analyse</a>
     <div class="sub" id="analyse-note" style="margin-top:16px;margin-bottom:0">Garantie simple : si l'annonce transmise est inexploitable ou que l'analyse ne peut pas être produite, remboursement intégral.</div>
   </div>
@@ -876,7 +881,7 @@
       <details class="term"><summary>Quelle différence avec le simulateur gratuit ?</summary><div>Le simulateur donne une première photo en 4 indicateurs. L'analyse ajoute ce qui décide vraiment : la fiscalité adaptée à votre situation, le risque DPE, la vacance, les scénarios de négociation chiffrés — et surtout une lecture en français de ce que tout ça implique pour vous.</div></details>
       <details class="term"><summary>Est-ce un conseil en investissement ?</summary><div>Non. C'est une analyse pédagogique et chiffrée des informations transmises : elle vous donne les éléments pour décider, mais la décision vous appartient. Le rapport ne remplace pas les vérifications d'usage (diagnostics, PV d'AG) ni les professionnels réglementés.</div></details>
       <details class="term"><summary>Et si l'annonce disparaît entre-temps ?</summary><div>Envoyez des captures d'écran de l'annonce avec le formulaire : l'analyse se fait sur cette base, même si le bien est retiré.</div></details>
-      <details class="term"><summary>Je veux analyser plusieurs biens</summary><div>C'est exactement le cas d'usage du Kit Investisseur (80 €) : la même méthode, en autonomie, sur autant de biens que vous voulez.</div></details>
+      <details class="term"><summary>Je veux analyser plusieurs biens</summary><div>C'est exactement le cas d'usage de l'espace investisseur (<a href="https://kadrix-app.contact-kadrix.workers.dev" target="_blank" rel="noopener">kadrix-app</a>) : la même méthode, en autonomie, sur autant de biens que vous voulez, avec comparaison directe entre eux.</div></details>
     </div>
   </div>
 </main>
@@ -1031,6 +1036,7 @@
     <a href="/blog/">Blog</a>
     <a href="#kit" data-nav>Le Kit</a>
     <a href="#contact" data-nav>Contact</a>
+    <a href="https://kadrix-app.contact-kadrix.workers.dev" target="_blank" rel="noopener">Mon espace</a>
     <a href="#confidentialite" data-nav>Confidentialité</a>
     <a href="#mentions" data-nav>Mentions légales</a>
     <a href="#cgv" data-nav>CGV</a>
@@ -1053,6 +1059,13 @@
   var ANALYSE_MODE = "live";
   var PAYHIP_ANALYSE_URL = "https://payhip.com/b/L1yGX";
 
+  // ⚙️ INTERRUPTEUR VENTES : mis à false le temps de faire évoluer le Kit et
+  // l'analyse sur mesure vers l'espace abonné (kadrix-app). Les deux boutons
+  // pointent alors vers le contact plutôt que vers Payhip. Remettre à true
+  // pour réactiver les ventes telles quelles.
+  var VENTES_ACTIVES = false;
+  var APP_URL = "https://kadrix-app.contact-kadrix.workers.dev";
+
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/contact.kadrix@gmail.com";
 
   /* ---------- Mesure d'audience (GoatCounter, sans cookie) ---------- */
@@ -1067,20 +1080,39 @@
     }
   }
 
-  document.getElementById('buy-link').href = PAYHIP_URL;
-
+  var buyLink = document.getElementById('buy-link');
+  var buyNote = document.getElementById('buy-note');
   var aLink = document.getElementById('analyse-link');
   var aNote = document.getElementById('analyse-note');
-  if (ANALYSE_MODE === "live") {
+
+  if (!VENTES_ACTIVES) {
+    // Kit et analyse en pause : les deux boutons redirigent vers le contact,
+    // sans afficher de prix pour quelque chose qui ne se vend plus pour l'instant.
+    var buyPrice = document.getElementById('buy-price'), buySub = document.getElementById('buy-sub');
+    var anPrice = document.getElementById('analyse-price'), anSub = document.getElementById('analyse-sub');
+    if (buyPrice) buyPrice.textContent = "En pause";
+    if (buySub) buySub.textContent = "Le Kit n'est plus vendu sous cette forme pour le moment";
+    if (anPrice) anPrice.textContent = "En pause";
+    if (anSub) anSub.textContent = "L'analyse sur mesure n'est plus proposée pour le moment";
+
+    buyLink.href = '#contact'; buyLink.setAttribute('data-nav','');
+    buyLink.textContent = "Me contacter";
+    if (buyNote) buyNote.textContent = "Un espace abonné, plus complet, est en préparation sur " + APP_URL.replace('https://','') + ". Une question dans l'intervalle ? Écrivez-moi.";
+    aLink.href = '#contact'; aLink.setAttribute('data-nav','');
+    aLink.textContent = "Me contacter";
+    aNote.textContent = "Un espace abonné, plus complet, est en préparation sur " + APP_URL.replace('https://','') + ". Une question dans l'intervalle ? Écrivez-moi.";
+  } else if (ANALYSE_MODE === "live") {
+    buyLink.href = PAYHIP_URL;
     aLink.href = PAYHIP_ANALYSE_URL;
     aLink.textContent = "Commander mon analyse — 49 €";
   } else {
+    buyLink.href = PAYHIP_URL;
     aLink.href = TALLY_URL;
     aLink.textContent = "Demander mon analyse — offre de lancement";
     aNote.textContent = "Période de lancement : les premières analyses sont offertes en échange d'un retour d'expérience. Aucun paiement demandé.";
   }
   aLink.addEventListener('click', function(){ trackEvent('clic-analyse'); });
-  document.getElementById('buy-link').addEventListener('click', function(){ trackEvent('clic-kit'); });
+  buyLink.addEventListener('click', function(){ trackEvent('clic-kit'); });
 
   /* ---------- Navigation par onglets (hash) ---------- */
   var pages = ['accueil','simulateur','analyse','apprendre','kit','contact','confidentialite','mentions','cgv'];
